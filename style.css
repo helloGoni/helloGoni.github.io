@@ -6,6 +6,7 @@ body {
 ul li {
     list-style :none;    
     color : white;
+    cursor : pointer;
 }
 
 header {
