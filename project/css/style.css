@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+body {
+    background-color: #2e2d2d;
+    color : #F4F2F3;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding-left : 10px;
+}
+
+a{
+    text-decoration: none;
+    color : inherit;
+}
+
+footer{
+    background-color: #2e2d2d;
+}
+ul {
+    padding-right : 0;
+}
+ul li {
+    list-style :none;    
+    color : #F4F2F3;
+    text-align: center;
+}
+
+#bigMenu {
+    text-align: center;    
+}
+
+#bigMenu nav > ul > li { 
+    display : inline-block;
+    position: relative;
+}
+
+#bigMenu nav > ul > li > a {
+    display :block;
+    line-height: 70px;
+    position : relative;
+    border-top: 1px;
+    width: 160px;
+    height: 70px;
+    font-size : 18px;
+    color : #F4F2F3;
+    cursor:pointer;
+}
+#bigMenu nav > ul > li > a:hover{
+    background-color: rgb(213, 219, 233);
+    color : #8091B0;
+    font-size : 20px;
+}
+#bigMenu nav > ul > li > a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width : 100%;
+    height: 2px;
+    background: white;
+}
+#map {
+    text-align: center;
+}
+
+.total {
+    text-align: center;
+    background-color :#F4F2F3;
+    color : black;
+}
+.resume {
+    color : black;
+    text-align: center;
+    width: 1000px;
+    padding-bottom : 10%;
+    margin-left : 26%;
+}
+
+footer {
+    background-color: #2e2d2d;
+    height : 200px;
+    text-align: center;
+}
+
+#board {
+    padding-left :300px;
+    padding-right:300px;
+    padding-bottom : 20px;
+    background-color :#F4F2F3;
+}
+
+table {
+    border : 2px solid black;
+}
+
+tr {
+    border : 2px solid black;
+}
+
+tr th {
+    border : 2px solid black;
+    background-color: silver;
+}
+
+tr td {
+    border : 2px solid black;
+}
+
+.big {
+    background-color: gray;
+}
+.small{
+    background-color : silver;
+}
+
+.boardWrap{
+    margin-top: 20px;
+    width : 1000px;
+    margin: 100px auto;
+}
+.boardTitle{
+    margin-bottom:30px;
+}
+
+.boardList{
+    width : 100%;
+    border-top : 2px solid #000;
+}
+.boardList > div {
+    border-bottom: 1px solid #ddd;
+    font-size: 0;
+}
+
+.boardList > div.top {
+    border-bottom: 1px solid #999;
+}
+
+.boardList > div:last-child {
+    border-bottom: 1px solid #000;
+}
+.boardList > div > div{
+    display: inline-block;
+    padding : 15px 0;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.boardList > div.top > div {
+    font-weight : 600;
+}
+
+.boardList .num { width: 10%;}
+.boardList .title{width : 60%; text-align: left;}
+
+.boardList .top .title {
+    text-align: center;
+}
+
+.boardList .writer {
+    width: 10%;
+}
+
+.boardList .date {
+    width: 10%;
+}
+
+.boardList .count {
+    width: 10%;
+}
+.boardPage {
+    text-align: center;
+    font-size: 0;
+}
+.boardPage a {
+    text-align: center;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-left: 0;
+    line-height: 100%;
+}
+.boardPage a.bt {
+    padding-top: 6px;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+.boardPage a.num {
+    padding-top: 2px;
+    font-size: 1.4rem;
+}
+
+.boardPage a.num.on {
+    border-color: #000;
+    background: #000;
+    color: #fff;
+}
+
+.boardPage a:first-child {
+    border-left: 1px solid #ddd;
+}
+
+footer {
+    color : #fff;
+}
+
+
+.boardListWrap{
+    color : black;
+}
+
+
+.bt_wrap {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+
+.bt_wrap a {
+    display: inline-block;
+    min-width: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    background: #000;
+    color: #fff;
+}
+
+#gameCanvas { 
+    border : 1px solid #000; 
+    width  : 700px;
+    height : 400px;
+}

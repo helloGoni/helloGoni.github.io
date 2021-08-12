@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">  
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <title>:: KBO 요점정리 사이트 ::</title>
+</head>
+<body>
+    <div id="bigMenu">
+        <nav class= "menu">
+            <ul>
+                <li><a onclick="location.href=('../index.html')">구단 소개</a></li>
+                <li><a onclick="location.href=('board.html')">게시판</a></li>
+                <li><a onclick="location.href=('today.html')">오늘의 경기</a></li>
+                <li><a onclick="location.href=('game.html')">미니 게임</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class = "total">
+        <div>
+            <div class = "warp_schedule">
+                <div class= "schedule">
+                    <script>
+                        var today = 0
+                        var league = [
+                                [
+                                    ["18 : 30","KT","키움","고척"],
+                                    ["18 : 30","SSG","LG","고척"],
+                                    ["18 : 30","한화","KIA","고척"],
+                                    ["18 : 30","두산","삼성","고척"],
+                                    ["18 : 30","롯데","NC","고척"]
+                                ],
+                                [
+                                    ["18 : 30","KT","키움","고척"],
+                                    ["18 : 30","SSG","LG","고척"],
+                                    ["18 : 30","한화","KIA","고척"],
+                                    ["18 : 30","두산","삼성","고척"],
+                                    ["18 : 30","롯데","NC","고척"]
+                                ]
+                        ];
+                    </script>
+            
+                    <div class = "top">
+                        <a></a>
+                        <div style="font-size:50px;">2021.8.9</div>
+                        <a></a>
+                    </div>
+                    <button onclick=next()>다음</button>
+                    <button onclick=prev()>이전</button>
+                    <table class = "todaySchedule">
+                       
+                        <tr>
+                            <th> 시간 </th>
+                            <th> 홈팀 </th>
+                            <th> 원정팀</th>
+                            <th> 장소</th>
+                        </tr>
+                        <tr>
+                            <td id = "time1"></td>
+                            <td id = "home1"></td>
+                            <td id = "away1"></td>   
+                            <td id = "place1"></td>                        
+                        </tr>
+                        <tr>
+                            <td id = "time2"></td>
+                            <td id = "home2"></td>
+                            <td id = "away2"></td>   
+                            <td id = "place2"></td>       
+                        </tr>
+                        <tr>
+                            <td id = "time3"></td>
+                            <td id = "home3"></td>
+                            <td id = "away3"></td>   
+                            <td id = "place3"></td>       
+                        </tr>
+                        <tr>
+                            <td id = "time4"></td>
+                            <td id = "home4"></td>
+                            <td id = "away4"></td>   
+                            <td id = "place4"></td>       
+                        </tr>
+                        <tr>
+                            <td id = "time5"></td>
+                            <td id = "home5"></td>
+                            <td id = "away5"></td>   
+                            <td id = "place5"></td>       
+                        </tr>
+
+                        <script>
+                                document.querySelector("#time1").innerHTML = league[today][0][0];
+                                document.querySelector("#home1").innerHTML = league[today][0][1];
+                                document.querySelector("#away1").innerHTML = league[today][0][2];
+                                documnet.querySelector("#place1").innerHTML = league[today][0][3];
+
+                                document.querySelector("#time2").innerHTML = league[today][1][0];
+                                document.querySelector("#home2").innerHTML = league[today][1][1];
+                                document.querySelector("#away2").innerHTML = league[today][1][2];
+                                documnet.querySelector("#place2").innerHTML = league[today][1][3];
+                                document.querySelector("#time3").innerHTML = league[today][2][0];
+                                document.querySelector("#home3").innerHTML = league[today][2][1];
+                                document.querySelector("#away3").innerHTML = league[today][2][2];
+                                documnet.querySelector("#place3").innerHTML = league[today][2][3];
+                                document.querySelector("#time4").innerHTML = league[today][3][0];
+                                document.querySelector("#home4").innerHTML = league[today][3][1];
+                                document.querySelector("#away4").innerHTML = league[today][3][2];
+                                documnet.querySelector("#place4").innerHTML = league[today][3][3];
+                                document.querySelector("#time5").innerHTML = league[today][4][0];
+                                document.querySelector("#home5").innerHTML = league[today][4][1];
+                                document.querySelector("#away5").innerHTML = league[today][4][2];
+                                documnet.querySelector("#place5").innerHTML = league[today][4][3];
+                            function next(){
+                                today++;
+                                document.querySelector("#time1").innerHTML = league[today][0][0];
+                                document.querySelector("#home1").innerHTML = league[today][0][1];
+                                document.querySelector("#away1").innerHTML = league[today][0][2];
+                                documnet.querySelector("#place1").innerHTML = league[today][0][3];
+                                document.querySelector("#time2").innerHTML = league[today][1][0];
+                                document.querySelector("#home2").innerHTML = league[today][1][1];
+                                document.querySelector("#away2").innerHTML = league[today][1][2];
+                                documnet.querySelector("#place2").innerHTML = league[today][1][3];
+                                document.querySelector("#time3").innerHTML = league[today][2][0];
+                                document.querySelector("#home3").innerHTML = league[today][2][1];
+                                document.querySelector("#away3").innerHTML = league[today][2][2];
+                                documnet.querySelector("#place3").innerHTML = league[today][2][3];
+                                document.querySelector("#time4").innerHTML = league[today][3][0];
+                                document.querySelector("#home4").innerHTML = league[today][3][1];
+                                document.querySelector("#away4").innerHTML = league[today][3][2];
+                                documnet.querySelector("#place4").innerHTML = league[today][3][3];
+                                document.querySelector("#time5").innerHTML = league[today][4][0];
+                                document.querySelector("#home5").innerHTML = league[today][4][1];
+                                document.querySelector("#away5").innerHTML = league[today][4][2];
+                                documnet.querySelector("#place5").innerHTML = league[today][4][3];
+                            }
+                            function prev(){
+                                today--;
+                                document.querySelector("#time1").innerHTML = league[today][0][0];
+                                document.querySelector("#home1").innerHTML = league[today][0][1];
+                                document.querySelector("#away1").innerHTML = league[today][0][2];
+                                documnet.querySelector("#place1").innerHTML = league[today][0][3];
+                                document.querySelector("#time2").innerHTML = league[today][1][0];
+                                document.querySelector("#home2").innerHTML = league[today][1][1];
+                                document.querySelector("#away2").innerHTML = league[today][1][2];
+                                documnet.querySelector("#place2").innerHTML = league[today][1][3];
+                                document.querySelector("#time3").innerHTML = league[today][2][0];
+                                document.querySelector("#home3").innerHTML = league[today][2][1];
+                                document.querySelector("#away3").innerHTML = league[today][2][2];
+                                documnet.querySelector("#place3").innerHTML = league[today][2][3];
+                                document.querySelector("#time4").innerHTML = league[today][3][0];
+                                document.querySelector("#home4").innerHTML = league[today][3][1];
+                                document.querySelector("#away4").innerHTML = league[today][3][2];
+                                documnet.querySelector("#place4").innerHTML = league[today][3][3];
+                                document.querySelector("#time5").innerHTML = league[today][4][0];
+                                document.querySelector("#home5").innerHTML = league[today][4][1];
+                                document.querySelector("#away5").innerHTML = league[today][4][2];
+                                documnet.querySelector("#place5").innerHTML = league[today][4][3];
+                            }
+                        </script>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script>
+            function onNext() {
+                var year = 2021;
+                var month = 9;
+                var day = 7;
+            }
+            
+        </script>
+    </div>
+
+
+
+
+    <footer>
+        <br/><br/><br/>
+        컴퓨터공학과 18101284 표건희<br/>
+        프로젝트 : 야구팀 소개하는 웹사이트<br/>
+        연락처 : 010 - 8965 - 4287
+    </footer>
+
+
+
+</body>
+</html>

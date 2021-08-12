@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">  
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <title>:: KBO 요점정리 사이트 ::</title>
+</head>
+<body>
+    <div id="bigMenu">
+        <nav class= "menu">
+            <ul>
+                <li><a onclick="location.href=('../index.html')">구단 소개</a></li>
+                <li><a onclick="location.href=('board.html')">게시판</a></li>
+                <li><a onclick="location.href=('today.html')">오늘의 경기</a></li>
+                <li><a onclick="location.href=('game.html')">미니 게임</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="board">
+        <div class="boardWrap">
+            <div class="boardTitle">
+            <br/>
+                <strong style="color : black;">자신의 야구팀을 응원해 보세요!</strong>
+            </div>
+            <div class="boardListWrap">
+                <div class="boardList">
+                    <div class="top">
+                        <div class="num">번호</div>
+                        <div class="title">제목</div>
+                        <div class="writer">글쓴이</div>
+                        <div class="date">작성일</div>
+                        <div class="count">조회</div>
+                    </div>
+                    <div>
+                        <div class="num" id = "nNum"></div>
+                        <div class="title" id = "tTitle"><a href="#"></a></div>
+                        <div class="writer" id = "wWriter"></div>
+                        <div class="date" id = "dDate"></div>
+                        <div class="count" id = "cCount"></div>
+                    </div>
+
+                    <div>
+                        <div class="num">5</div>
+                        <div class="title"><a href="#">두산 베어스 화이팅!!</a></div>
+                        <div class="writer">표건희</div>
+                        <div class="date">2021.8.15</div>
+                        <div class="count">73</div>
+                    </div>
+                    <div>
+                        <div class="num">4</div>
+                        <div class="title"><a href="#">무적엘지</a></div>
+                        <div class="writer">김민석</div>
+                        <div class="date">2021.8.14</div>
+                        <div class="count">92</div>
+                    </div>
+                    <div>
+                        <div class="num">3</div>
+                        <div class="title"><a href="#">오늘도 삼성이 이길듯</a></div>
+                        <div class="writer">박선영</div>
+                        <div class="date">2021.8.11</div>
+                        <div class="count">13</div>
+                    </div>
+                    <div>
+                        <div class="num">2</div>
+                        <div class="title"><a href="#">올해는 ssg가 우승하지 않을까요?</a></div>
+                        <div class="writer">오성원</div>
+                        <div class="date">2021.8.11</div>
+                        <div class="count">42</div>
+                    </div>
+                    <div>
+                        <div class="num">1</div>
+                        <div class="title"><a href="#">응원 게시판입니다.</a></div>
+                        <div class="writer">운영자</div>
+                        <div class="date">2021.8.10</div>
+                        <div class="count">87</div>
+                    </div>
+                </div><br/>
+                <div class="boardPage">
+                    <a href="#" class="bt first"><<</a>
+                    <a href="#" class="bt prev"><</a>
+                    <a href="#" class="num on">1</a>
+                    <a href="#" class="bt next">></a>
+                    <a href="#" class="bt last">>></a>
+                </div>
+
+                <script>
+                    function addBoard(){
+                        var a =prompt("내용을 입력하세요");
+                        var b =prompt("이름을 입력하세요");
+                        var c = new Date();
+                        var year = c.getFullYear();
+                        var month = c.getMonth()+1;
+                        var date = c.getDate();
+                        document.querySelector('#nNum').innerHTML="6";
+                        document.querySelector('#tTitle').innerHTML=a;
+                        document.querySelector('#wWriter').innerHTML=b;
+                        document.querySelector('#dDate').innerHTML=year+"."+month+"."+date;
+                        document.querySelector('#cCount').innerHTML="0";
+                    }
+                </script>
+
+                <div class="bt_wrap">
+                    <a href="#" class="on" onclick="addBoard()">등록</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <br/><br/><br/>
+        컴퓨터공학과 18101284 표건희<br/>
+        프로젝트 : 야구팀 소개하는 웹사이트<br/>
+        연락처 : 010 - 8965 - 4287
+    </footer>
+
+
+</body>
+</html>
