@@ -1,12 +1,3 @@
-
-function init() {
-  ballX = 600;
-  ballY = 340;
-  ballSize = 5;
-  ballSpeed = 1;
-  ctx = document.getElementById("gameCanvas").getContext("2d");
-}
-
 var ctx;
 var ballX;
 var ballY;
@@ -23,6 +14,13 @@ var outCount;
 var gamePlay = false;
 var pressed = false;
 
+function init() {
+  ballX = 600;
+  ballY = 340;
+  ballSize = 5;
+  ballSpeed = 1;
+  ctx = document.getElementById("gameCanvas").getContext("2d");
+}
 
 function draw() {
 
@@ -63,18 +61,19 @@ function update() {
 function gameStart() {
   outCount = 3;
   gamePlay = true;
-  window.requestAnimationFrame(game);
   if(outCount = 0) {
     gamePlay = false;
   }
+  if(pressed){
+    ballSpeed = -ballSpeed;
+  }
+  window.requestAnimationFrame(game);
 }
 
-draw();
 
+document.addEventListener("keydown",keyDownHandler,false);
+document.addEventListener("keyup",keyUpHandler,false);
 
-
-document.addEventListener("keydown".keyDownHandler,false);
-document.addEventListener("keyup".keyUpHandler,false);
 function keyDownHandler(e) {
   if(e.keyCode==32) {
     pressed = true;
@@ -93,4 +92,7 @@ function game(){
   window.requestAnimationFrame(game);
 }
 
-
+function startMenu(){
+  drawBatter();
+  drawPitcher();
+}
