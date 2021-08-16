@@ -16,7 +16,7 @@
             <ul>
                 <li><a onclick="location.href=('../index.html')">구단 소개</a></li>
                 <li><a onclick="location.href=('board.html')">게시판</a></li>
-                <li><a onclick="location.href=('today.html')">오늘의 경기</a></li>
+                <li><a onclick="location.href=('today.html')">경기 일정</a></li>
                 <li><a onclick="location.href=('game.html')">미니 게임</a></li>
             </ul>
         </nav>
@@ -28,32 +28,454 @@
             <div class = "warp_schedule">
                 <div class= "schedule">
                     <script>
-                        var today = 0
+                        var now = new Date();
+                        var year = now.getFullYear();
+                        var month = now.getMonth()+1;
+                        var day = now.getDate();
+
+                        var startDate = new Date(2021, 08, 10);
+                        var endDate = new Date(year, month, day);
+                        var calcDay = endDate.getTime() - startDate.getTime();                      
+
+                        var today = calcDay / (1000*60*60*24);
+                        today = today - parseInt(today/7);
                         var league = [
                                 [
                                     ["18 : 30","KT","키움","고척"],
-                                    ["18 : 30","SSG","LG","고척"],
-                                    ["18 : 30","한화","KIA","고척"],
-                                    ["18 : 30","두산","삼성","고척"],
-                                    ["18 : 30","롯데","NC","고척"]
+                                    ["18 : 30","SSG","LG","잠실"],
+                                    ["18 : 30","한화","KIA","광주"],
+                                    ["18 : 30","두산","삼성","대구"],
+                                    ["18 : 30","롯데","NC","창원"],
+                                    ["2021","08","10","화"]
                                 ],
                                 [
                                     ["18 : 30","KT","키움","고척"],
-                                    ["18 : 30","SSG","LG","고척"],
-                                    ["18 : 30","한화","KIA","고척"],
-                                    ["18 : 30","두산","삼성","고척"],
-                                    ["18 : 30","롯데","NC","고척"]
+                                    ["18 : 30","SSG","LG","잠실"],
+                                    ["18 : 30","한화","KIA","광주"],
+                                    ["18 : 30","두산","삼성","대구"],
+                                    ["18 : 30","롯데","NC","창원"],
+                                    ["2021","08","11","수"]
+                                ],
+                                [
+                                    ["18 : 30","KT","키움","고척"],
+                                    ["18 : 30","SSG","LG","잠실"],
+                                    ["18 : 30","한화","KIA","광주"],
+                                    ["18 : 30","두산","삼성","대구"],
+                                    ["18 : 30","롯데","NC","창원"],
+                                    ["2021","08","12","목"]
+                                ],
+                                [
+                                    ["18 : 30","KIA","SSG","문학"],
+                                    ["18 : 30","롯데","LG","잠실"],
+                                    ["18 : 30","NC","한화","대전"],
+                                    ["18 : 30","두산","키움","고척"],
+                                    ["18 : 30","삼성","KT","수원"],
+                                    ["2021","08","13","금"]
+                                ],
+                                [
+                                    ["18 : 00","KIA","SSG","문학"],
+                                    ["18 : 00","롯데","LG","잠실"],
+                                    ["18 : 00","NC","한화","대전"],
+                                    ["18 : 00","두산","키움","고척"],
+                                    ["18 : 00","삼성","KT","수원"],
+                                    ["2021","08","14","토"]
+                                ],
+                                [
+                                    ["17 : 00","KIA","SSG","문학"],
+                                    ["17 : 00","롯데","LG","잠실"],
+                                    ["17 : 00","NC","한화","대전"],
+                                    ["17 : 00","두산","키움","고척"],
+                                    ["17 : 00","삼성","KT","수원"],
+                                    ["2021","08","15","일"]
+                                ],
+                                [
+                                    ["18 : 30","KIA","두산","잠실"],
+                                    ["18 : 30","LG","KT","수원"],
+                                    ["18 : 30","NC","SSG","문학"],
+                                    ["18 : 30","삼성","한화","대전"],
+                                    ["18 : 30","키움","롯데","사직"],
+                                    ["2021","08","17","화"]
+                                ],
+                                [
+                                    ["18 : 30","KIA","두산","잠실"],
+                                    ["18 : 30","LG","KT","수원"],
+                                    ["18 : 30","NC","SSG","문학"],
+                                    ["18 : 30","삼성","한화","대전"],
+                                    ["18 : 30","키움","롯데","사직"],
+                                    ["2021","08","18","수"]
+                                ],
+                                [
+                                    ["18 : 30","KIA","두산","잠실"],
+                                    ["18 : 30","LG","KT","수원"],
+                                    ["18 : 30","NC","SSG","문학"],
+                                    ["18 : 30","삼성","한화","대전"],
+                                    ["18 : 30","키움","롯데","사직"],
+                                    ["2021","08","19","목"]
+                                ],
+                                [
+                                    ["18 : 30","한화","두산","잠실"],
+                                    ["18 : 30","SSG","삼성","대구"],
+                                    ["18 : 30","키움","KIA","광주"],
+                                    ["18 : 30","LG","NC","창원"],
+                                    ["18 : 30","KT","롯데","사직"],
+                                    ["2021","08","20","금"]
+                                ],
+                                [
+                                    ["18 : 00","한화","두산","잠실"],
+                                    ["18 : 00","SSG","삼성","대구"],
+                                    ["18 : 00","키움","KIA","광주"],
+                                    ["18 : 00","LG","NC","창원"],
+                                    ["18 : 00","KT","롯데","사직"],
+                                    ["2021","08","21","토"]
+                                ],
+                                [
+                                    ["17 : 00","한화","두산","잠실"],
+                                    ["17 : 00","SSG","삼성","대구"],
+                                    ["17 : 00","키움","KIA","광주"],
+                                    ["17 : 00","LG","NC","창원"],
+                                    ["17 : 00","KT","롯데","사직"],
+                                    ["2021","08","22","일"]
+                                ],
+                                [
+                                    ["18 : 30","한화","두산","잠실"],
+                                    ["18 : 30","키움","KIA","광주"],
+                                    ["18 : 30","LG","NC","창원"],
+                                    ["18 : 30","KT","롯데","사직"],
+                                    ["-","-","-","-"],
+                                    ["2021","08","23","월"]
+                                ],
+                                [
+                                    ["18 : 30","한화","키움","고척"],
+                                    ["18 : 30","롯데","KIA","광주"],
+                                    ["18 : 30","SSG","KT","수원"],
+                                    ["18 : 30","두산","NC","창원"],
+                                    ["18 : 30","삼성","LG","잠실"],
+                                    ["2021","08","25","수"]
+                                ],
+                                [
+                                    ["18 : 30","한화","키움","고척"],
+                                    ["18 : 30","롯데","KIA","광주"],
+                                    ["18 : 30","SSG","KT","수원"],
+                                    ["18 : 30","두산","NC","창원"],
+                                    ["18 : 30","삼성","LG","잠실"],
+                                    ["2021","08","26","목"]
+                                ],
+                                [
+                                    ["18 : 30","한화","키움","고척"],
+                                    ["18 : 30","롯데","KIA","광주"],
+                                    ["18 : 30","SSG","KT","수원"],
+                                    ["18 : 30","두산","NC","창원"],
+                                    ["18 : 30","삼성","LG","잠실"],
+                                    ["2021","08","27","금"]
+                                ],
+                                [
+                                    ["18 : 00","KIA","SSG","문학"],
+                                    ["18 : 00","NC","한화","대전"],
+                                    ["18 : 00","삼성","KT","수원"],
+                                    ["18 : 00","두산","롯데","사직"],
+                                    ["18 : 00","키움","LG","잠실"],
+                                    ["2021","08","28","토"]
+                                ],
+                                [
+                                    ["17 : 00","KIA","SSG","문학"],
+                                    ["17 : 00","NC","한화","대전"],
+                                    ["17 : 00","삼성","KT","수원"],
+                                    ["17 : 00","두산","롯데","사직"],
+                                    ["17 : 00","키움","LG","잠실"],
+                                    ["2021","08","29","일"]
+                                ],
+                                [
+                                    ["18 : 30","KIA","두산","잠실"],
+                                    ["18 : 30","KT","한화","대전"],
+                                    ["18 : 30","LG","롯데","사직"],
+                                    ["18 : 30","NC","SSG","문학"],
+                                    ["18 : 30","키움","삼성","대구"],
+                                    ["2021","08","31","화"]
+                                ],
+                                [
+                                    ["18 : 30","KIA","두산","잠실"],
+                                    ["18 : 30","KT","한화","대전"],
+                                    ["18 : 30","LG","롯데","사직"],
+                                    ["18 : 30","NC","SSG","문학"],
+                                    ["18 : 30","키움","삼성","대구"],
+                                    ["2021","09","01","수"]
+                                ],
+                                [
+                                    ["18 : 30","KIA","두산","잠실"],
+                                    ["18 : 30","KT","한화","대전"],
+                                    ["18 : 30","LG","롯데","사직"],
+                                    ["18 : 30","NC","SSG","문학"],
+                                    ["18 : 30","키움","삼성","대구"],
+                                    ["2021","09","02","목"]
+                                ],
+                                [
+                                    ["18 : 30","삼성","KIA","광주"],
+                                    ["18 : 30","KT","키움","고척"],
+                                    ["18 : 30","한화","롯데","사직"],
+                                    ["18 : 30","두산","SSG","문학"],
+                                    ["18 : 30","NC","LG","잠실"],
+                                    ["2021","09","03","금"]
+                                ],
+                                [
+                                    ["17 : 00","삼성","KIA","광주"],
+                                    ["17 : 00","KT","키움","고척"],
+                                    ["17 : 00","한화","롯데","사직"],
+                                    ["17 : 00","두산","SSG","문학"],
+                                    ["17 : 00","NC","LG","잠실"],
+                                    ["2021","09","04","토"]
+                                ],
+                                [
+                                    ["14 : 00","삼성","KIA","광주"],
+                                    ["14 : 00","KT","키움","고척"],
+                                    ["14 : 00","한화","롯데","사직"],
+                                    ["14 : 00","두산","SSG","문학"],
+                                    ["14 : 00","NC","LG","잠실"],
+                                    ["2021","09","05","일"]
+                                ],
+                                [
+                                    ["18 : 30","한화","NC","창원"],
+                                    ["18 : 30","KIA","KT","수원"],
+                                    ["18 : 30","롯데","삼성","대구"],
+                                    ["18 : 30","LG","SSG","문학"],
+                                    ["18 : 30","키움","두산","잠실"],
+                                    ["2021","09","07","화"]
+                                ],
+                                [
+                                    ["18 : 30","한화","NC","창원"],
+                                    ["18 : 30","KIA","KT","수원"],
+                                    ["18 : 30","롯데","삼성","대구"],
+                                    ["18 : 30","LG","SSG","문학"],
+                                    ["18 : 30","키움","두산","잠실"],
+                                    ["2021","09","08","수"]
+                                ],
+                                [
+                                    ["18 : 30","한화","LG","잠실"],
+                                    ["18 : 30","KIA","키움","고척"],
+                                    ["18 : 30","KT","삼성","대구"],
+                                    ["18 : 30","SSG","롯데","사직"],
+                                    ["18 : 30","두산","NC","창원"],
+                                    ["2021","09","09","목"]
+                                ],
+                                [
+                                    ["18 : 30","한화","LG","잠실"],
+                                    ["18 : 30","KIA","키움","고척"],
+                                    ["18 : 30","KT","삼성","대구"],
+                                    ["18 : 30","SSG","롯데","사직"],
+                                    ["18 : 30","두산","NC","창원"],
+                                    ["2021","09","10","금"]
+                                ],
+                                [
+                                    ["17 : 00","LG","두산","잠실"],
+                                    ["17 : 00","NC","KIA","광주"],
+                                    ["17 : 00","삼성","한화","대전"],
+                                    ["17 : 00","SSG","KT","수원"],
+                                    ["17 : 00","키움","롯데","사직"],
+                                    ["2021","09","11","토"]
+                                ],
+                                [
+                                    ["14 : 00","LG","두산","잠실"],
+                                    ["14 : 00","NC","KIA","광주"],
+                                    ["14 : 00","삼성","한화","대전"],
+                                    ["14 : 00","SSG","KT","수원"],
+                                    ["14 : 00","키움","롯데","사직"],
+                                    ["2021","09","11","일 1차전"]
+                                ],
+                                [
+                                    ["17 : 00","LG","두산","잠실"],
+                                    ["17 : 00","NC","KIA","광주"],
+                                    ["17 : 00","삼성","한화","대전"],
+                                    ["17 : 00","SSG","KT","수원"],
+                                    ["-","-","-","-"],
+                                    ["2021","09","12","일 2차전"]
+                                ],
+                                [
+                                    ["18 : 30","한화","SSG","문학"],
+                                    ["18 : 30","LG","삼성","대구"],
+                                    ["18 : 30","KT","두산","잠실"],
+                                    ["18 : 30","롯데","KIA","광주"],
+                                    ["18 : 30","키움","NC","창원"],
+                                    ["2021","09","14","화"]
+                                ],
+                                [
+                                    ["18 : 30","한화","SSG","문학"],
+                                    ["18 : 30","LG","삼성","대구"],
+                                    ["18 : 30","KT","두산","잠실"],
+                                    ["18 : 30","롯데","KIA","광주"],
+                                    ["18 : 30","키움","NC","창원"],
+                                    ["2021","09","15","수"]
+                                ],
+                                [
+                                    ["18 : 30","한화","키움","고척"],
+                                    ["18 : 30","KIA","삼성","대구"],
+                                    ["18 : 30","SSG","두산","잠실"],
+                                    ["18 : 30","롯데","KT","수원"],
+                                    ["18 : 30","LG","NC","창원"],
+                                    ["2021","09","16","목"]
+                                ],
+                                [
+                                    ["18 : 30","한화","키움","고척"],
+                                    ["18 : 30","KIA","삼성","대구"],
+                                    ["18 : 30","SSG","두산","잠실"],
+                                    ["18 : 30","롯데","KT","수원"],
+                                    ["18 : 30","LG","NC","창원"],
+                                    ["2021","09","17","금"]
+                                ],
+                                [
+                                    ["17 : 00","두산","키움","고척"],
+                                    ["17 : 00","삼성","SSG","문학"],
+                                    ["17 : 00","KIA","LG","잠실"],
+                                    ["17 : 00","롯데","한화","대전"],
+                                    ["17 : 00","KT","NC","창원"],
+                                    ["2021","09","18","토"]
+                                ],
+                                [
+                                    ["14 : 00","두산","키움","고척"],
+                                    ["14 : 00","삼성","SSG","문학"],
+                                    ["14 : 00","KIA","LG","잠실"],
+                                    ["14 : 00","롯데","한화","대전"],
+                                    ["14 : 00","KT","NC","창원"],
+                                    ["2021","09","19","일"]
+                                ],   
+                                [
+                                    ["18 : 30","LG","한화","대전"],
+                                    ["18 : 30","KT","KIA","광주"],
+                                    ["18 : 30","NC","두산","잠실"],
+                                    ["18 : 30","삼성","롯데","사직"],
+                                    ["18 : 30","키움","SSG","문학"],
+                                    ["2021","09","21","화"]
+                                ],
+                                [
+                                    ["18 : 30","LG","한화","대전"],
+                                    ["18 : 30","KT","KIA","광주"],
+                                    ["18 : 30","NC","두산","잠실"],
+                                    ["18 : 30","삼성","롯데","사직"],
+                                    ["18 : 30","키움","SSG","문학"],
+                                    ["2021","09","22","수"]
+                                ],
+                                [
+                                    ["18 : 30","삼성","LG","잠실"],
+                                    ["18 : 30","두산","KIA","광주"],
+                                    ["18 : 30","NC","키움","고척"],
+                                    ["18 : 30","한화","KT","수원"],
+                                    ["18 : 30","롯데","SSG","문학"],
+                                    ["2021","09","23","목"]
+                                ],
+                                [
+                                    ["18 : 30","삼성","LG","잠실"],
+                                    ["18 : 30","두산","KIA","광주"],
+                                    ["18 : 30","NC","키움","고척"],
+                                    ["18 : 30","한화","KT","수원"],
+                                    ["15 : 30, 18 : 30","롯데","SSG","문학"],
+                                    ["2021","09","24","금"]
+                                ],
+                                [
+                                    ["17 : 00","한화","두산","잠실"],
+                                    ["17 : 00","SSG","KIA","광주"],
+                                    ["17 : 00","롯데","키움","고척"],
+                                    ["17 : 00","LG","KT","수원"],
+                                    ["17 : 00","NC","삼성","대구"],
+                                    ["2021","09","25","토"]
+                                ],
+                                [
+                                    ["14 : 00","한화","두산","잠실"],
+                                    ["14 : 00","SSG","KIA","광주"],
+                                    ["14 : 00","롯데","키움","고척"],
+                                    ["14 : 00","LG","KT","수원"],
+                                    ["14 : 00","NC","삼성","대구"],
+                                    ["2021","09","26","일"]
+                                ],
+                                [
+                                    ["18 : 30","롯데","LG","잠실"],
+                                    ["18 : 30","SSG","삼성","대구"],
+                                    ["18 : 30","키움","한화","대전"],
+                                    ["18 : 30","두산","KT","수원"],
+                                    ["18 : 30","KIA","NC","창원"],
+                                    ["2021","09","28","화"]
+                                ],
+                                [
+                                    ["18 : 30","롯데","LG","잠실"],
+                                    ["18 : 30","SSG","삼성","대구"],
+                                    ["18 : 30","키움","한화","대전"],
+                                    ["18 : 30","두산","KT","수원"],
+                                    ["15 : 00, 18 : 30","KIA","NC","창원"],
+                                    ["2021","09","29","수"]
+                                ],
+                                [
+                                    ["18 : 30","두산","LG","잠실"],
+                                    ["18 : 30","한화","삼성","대구"],
+                                    ["18 : 30","키움","KIA","광주"],
+                                    ["18 : 30","SSG","NC","창원"],
+                                    ["18 : 30","KT","롯데","사직"],
+                                    ["2021","09","30","목"]
+                                ],
+                                [
+                                    ["18 : 30","두산","LG","잠실"],
+                                    ["18 : 30","한화","삼성","대구"],
+                                    ["18 : 30","키움","KIA","광주"],
+                                    ["19 : 00","SSG","NC","창원"],
+                                    ["18 : 30","KT","롯데","사직"],
+                                    ["2021","10","01","금"]
+                                ],
+                                [
+                                    ["17 : 00","LG","키움","고척"],
+                                    ["17 : 00","삼성","두산","잠실"],
+                                    ["17 : 00","한화","KIA","광주"],
+                                    ["17 : 00","KT","SSG","문학"],
+                                    ["17 : 00","NC","롯데","사직"],
+                                    ["2021","10","02","토"]
+                                ],
+                                [
+                                    ["14 : 00","LG","키움","고척"],
+                                    ["14 : 00","삼성","두산","잠실"],
+                                    ["14 : 00","한화","KIA","광주"],
+                                    ["14 : 00","KT","SSG","문학"],
+                                    ["14 : 00","NC","롯데","사직"],
+                                    ["2021","10","03","일"]
+                                ],
+                                [
+                                    ["18 : 30","삼성","키움","고척"],
+                                    ["18 : 30","NC","KT","수원"],
+                                    ["18 : 30","두산","한화","대전"],
+                                    ["18 : 30","SSG","LG","잠실"],
+                                    ["18 : 30","KIA","롯데","사직"],
+                                    ["2021","10","05","화"]
+                                ],
+                                [
+                                    ["18 : 30","삼성","키움","고척"],
+                                    ["18 : 30","NC","KT","수원"],
+                                    ["18 : 30","두산","한화","대전"],
+                                    ["15 : 00, 18 : 30","SSG","LG","잠실"],
+                                    ["18 : 30","KIA","롯데","사직"],
+                                    ["2021","10","06","수"]
+                                ],
+                                [
+                                    ["18 : 30","삼성","NC","창원"],
+                                    ["18 : 30","키움","KT","수원"],
+                                    ["18 : 30","SSG","한화","대전"],
+                                    ["18 : 30","롯데","두산","잠실"],
+                                    ["18 : 30","LG","KIA","광주"],
+                                    ["2021","10","07","목"]
+                                ],
+                                [
+                                    ["18 : 30","삼성","NC","창원"],
+                                    ["18 : 30","키움","KT","수원"],
+                                    ["18 : 30","SSG","한화","대전"],
+                                    ["18 : 30","롯데","두산","잠실"],
+                                    ["18 : 30","LG","KIA","광주"],
+                                    ["2021","10","08","금"]
                                 ]
                         ];
+
                     </script>
             
                     <div class = "top">
                         <a></a>
-                        <div style="font-size:50px;">2021.8.9</div>
+                        <div style="font-size:50px;"><span id="yyear"></span>.<span id="mmonth"></span>.<span id="dday"></span>.<span id="ddate"></span>
+                        </div>
                         <a></a>
-                    </div>
-                    <button onclick=next()>다음</button>
+                    </div><br/>
                     <button onclick=prev()>이전</button>
+                    <button onclick=next()>다음</button><br/><br/>
                     <table class = "todaySchedule">
                        
                         <tr>
@@ -97,69 +519,82 @@
                                 document.querySelector("#time1").innerHTML = league[today][0][0];
                                 document.querySelector("#home1").innerHTML = league[today][0][1];
                                 document.querySelector("#away1").innerHTML = league[today][0][2];
-                                documnet.querySelector("#place1").innerHTML = league[today][0][3];
+                                document.querySelector("#place1").innerHTML = league[today][0][3];
 
                                 document.querySelector("#time2").innerHTML = league[today][1][0];
                                 document.querySelector("#home2").innerHTML = league[today][1][1];
                                 document.querySelector("#away2").innerHTML = league[today][1][2];
-                                documnet.querySelector("#place2").innerHTML = league[today][1][3];
+                                document.querySelector("#place2").innerHTML = league[today][1][3];
                                 document.querySelector("#time3").innerHTML = league[today][2][0];
                                 document.querySelector("#home3").innerHTML = league[today][2][1];
                                 document.querySelector("#away3").innerHTML = league[today][2][2];
-                                documnet.querySelector("#place3").innerHTML = league[today][2][3];
+                                document.querySelector("#place3").innerHTML = league[today][2][3];
                                 document.querySelector("#time4").innerHTML = league[today][3][0];
                                 document.querySelector("#home4").innerHTML = league[today][3][1];
                                 document.querySelector("#away4").innerHTML = league[today][3][2];
-                                documnet.querySelector("#place4").innerHTML = league[today][3][3];
+                                document.querySelector("#place4").innerHTML = league[today][3][3];
                                 document.querySelector("#time5").innerHTML = league[today][4][0];
                                 document.querySelector("#home5").innerHTML = league[today][4][1];
                                 document.querySelector("#away5").innerHTML = league[today][4][2];
-                                documnet.querySelector("#place5").innerHTML = league[today][4][3];
+                                document.querySelector("#place5").innerHTML = league[today][4][3];
+                                document.querySelector("#yyear").innerHTML = league[today][5][0];
+                                document.querySelector("#mmonth").innerHTML = league[today][5][1];
+                                document.querySelector("#dday").innerHTML = league[today][5][2];
+                                document.querySelector("#ddate").innerHTML = league[today][5][3];
+
                             function next(){
                                 today++;
                                 document.querySelector("#time1").innerHTML = league[today][0][0];
                                 document.querySelector("#home1").innerHTML = league[today][0][1];
                                 document.querySelector("#away1").innerHTML = league[today][0][2];
-                                documnet.querySelector("#place1").innerHTML = league[today][0][3];
+                                document.querySelector("#place1").innerHTML = league[today][0][3];
                                 document.querySelector("#time2").innerHTML = league[today][1][0];
                                 document.querySelector("#home2").innerHTML = league[today][1][1];
                                 document.querySelector("#away2").innerHTML = league[today][1][2];
-                                documnet.querySelector("#place2").innerHTML = league[today][1][3];
+                                document.querySelector("#place2").innerHTML = league[today][1][3];
                                 document.querySelector("#time3").innerHTML = league[today][2][0];
                                 document.querySelector("#home3").innerHTML = league[today][2][1];
                                 document.querySelector("#away3").innerHTML = league[today][2][2];
-                                documnet.querySelector("#place3").innerHTML = league[today][2][3];
+                                document.querySelector("#place3").innerHTML = league[today][2][3];
                                 document.querySelector("#time4").innerHTML = league[today][3][0];
                                 document.querySelector("#home4").innerHTML = league[today][3][1];
                                 document.querySelector("#away4").innerHTML = league[today][3][2];
-                                documnet.querySelector("#place4").innerHTML = league[today][3][3];
+                                document.querySelector("#place4").innerHTML = league[today][3][3];
                                 document.querySelector("#time5").innerHTML = league[today][4][0];
                                 document.querySelector("#home5").innerHTML = league[today][4][1];
                                 document.querySelector("#away5").innerHTML = league[today][4][2];
-                                documnet.querySelector("#place5").innerHTML = league[today][4][3];
+                                document.querySelector("#place5").innerHTML = league[today][4][3];
+                                document.querySelector("#yyear").innerHTML = league[today][5][0];
+                                document.querySelector("#mmonth").innerHTML = league[today][5][1];
+                                document.querySelector("#dday").innerHTML = league[today][5][2];
+                                document.querySelector("#ddate").innerHTML = league[today][5][3];
                             }
                             function prev(){
                                 today--;
                                 document.querySelector("#time1").innerHTML = league[today][0][0];
                                 document.querySelector("#home1").innerHTML = league[today][0][1];
                                 document.querySelector("#away1").innerHTML = league[today][0][2];
-                                documnet.querySelector("#place1").innerHTML = league[today][0][3];
+                                document.querySelector("#place1").innerHTML = league[today][0][3];
                                 document.querySelector("#time2").innerHTML = league[today][1][0];
                                 document.querySelector("#home2").innerHTML = league[today][1][1];
                                 document.querySelector("#away2").innerHTML = league[today][1][2];
-                                documnet.querySelector("#place2").innerHTML = league[today][1][3];
+                                document.querySelector("#place2").innerHTML = league[today][1][3];
                                 document.querySelector("#time3").innerHTML = league[today][2][0];
                                 document.querySelector("#home3").innerHTML = league[today][2][1];
                                 document.querySelector("#away3").innerHTML = league[today][2][2];
-                                documnet.querySelector("#place3").innerHTML = league[today][2][3];
+                                document.querySelector("#place3").innerHTML = league[today][2][3];
                                 document.querySelector("#time4").innerHTML = league[today][3][0];
                                 document.querySelector("#home4").innerHTML = league[today][3][1];
                                 document.querySelector("#away4").innerHTML = league[today][3][2];
-                                documnet.querySelector("#place4").innerHTML = league[today][3][3];
+                                document.querySelector("#place4").innerHTML = league[today][3][3];
                                 document.querySelector("#time5").innerHTML = league[today][4][0];
                                 document.querySelector("#home5").innerHTML = league[today][4][1];
                                 document.querySelector("#away5").innerHTML = league[today][4][2];
-                                documnet.querySelector("#place5").innerHTML = league[today][4][3];
+                                document.querySelector("#place5").innerHTML = league[today][4][3];
+                                document.querySelector("#yyear").innerHTML = league[today][5][0];
+                                document.querySelector("#mmonth").innerHTML = league[today][5][1];
+                                document.querySelector("#dday").innerHTML = league[today][5][2];
+                                document.querySelector("#ddate").innerHTML = league[today][5][3];
                             }
                         </script>
                     </table>
@@ -174,6 +609,7 @@
             }
             
         </script>
+        <br/><br/>
     </div>
 
 

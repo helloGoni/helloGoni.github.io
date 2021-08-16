@@ -230,6 +230,11 @@ footer {
 
 #gameCanvas { 
     border : 1px solid #000; 
-    width  : 700px;
-    height : 400px;
+}
+
+.todaySchedule {
+    width  : 44%;
+    text-align: center;
+    margin-left: 28%;
+    margin-right : 28%;
 }

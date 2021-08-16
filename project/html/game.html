@@ -11,24 +11,24 @@
 
     <title>:: KBO 요점정리 사이트 ::</title>
 </head>
-<body>
+<body onload = "init();">
     <div id="bigMenu">
         <nav class= "menu">
             <ul>
                 <li><a onclick="location.href=('../index.html')">구단 소개</a></li>
                 <li><a onclick="location.href=('board.html')">게시판</a></li>
-                <li><a onclick="location.href=('today.html')">오늘의 경기</a></li>
+                <li><a onclick="location.href=('today.html')">경기 일정</a></li>
                 <li><a onclick="location.href=('game.html')">미니 게임</a></li>
             </ul>
         </nav>
     </div>
 
     <div class= "total"><br/>
-        <canvas id="gameCanvas"></canvas>
+        <canvas id="gameCanvas" width = "700" height= "400"></canvas>
 
     <br/>
     <br/>
-    <button onclick = "playGame()">누르세요!</button>
+    <button onclick = "gameStart()"> 게임시작 </button><br/><br/>
     </div>
 
 
@@ -40,6 +40,5 @@
         프로젝트 : 야구팀 소개하는 웹사이트<br/>
         연락처 : 010 - 8965 - 4287
     </footer>
-
 </body>
 </html>
