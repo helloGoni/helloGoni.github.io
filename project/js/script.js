@@ -2,8 +2,12 @@ var ctx;
 var canvas;
 var ballX;
 var ballY;
+var level;
 var ballSize;
-var ballSpeed; // 공 관련 변수
+var ballSpeedX; // 공 관련 변수
+var ballSpeedY;
+var audio = new Audio('../img/ggang.mp3');
+audio.volume = 0.1;
 var batter1 = new Image();
 batter1.src = "../img/batter1.png"; // 타자 대기이미지 변수
 var batter2 = new Image();
@@ -19,7 +23,7 @@ function init() {
   ballX = 600;
   ballY = 340;
   ballSize = 5;
-  ballSpeed = 1;
+  ballSpeedX = 4;
   canvas = document.getElementById("gameCanvas")
   ctx = canvas.getContext("2d");
 }
@@ -51,13 +55,19 @@ function drawBall() {
 }
 
 function update() {
-  ballX -= ballSpeed;
+  ballX -= ballSpeedX;
+  ballY -= ballSpeedY;
+  if(ballSpeedX<0){
+  ballSpeedY -= 0.07;
+  }
 }
 
 function drawScore() {
-  var text = " Score : "+outCount;
+  var text = " Score : "+ score;
+  var text2 = " 남은 기회 : "+outCount;
   ctx.font = '20px Calibri';
   ctx.fillText(text,50,110);
+  ctx.fillText(text2,50,130);
 }
 function drawStart() {
   var text = "A키를 누르면 스윙!"
@@ -65,40 +75,50 @@ function drawStart() {
   ctx.fillText('A 키를 누르면 스윙!',50,110);
 }
 function gameStart() {
-  outCount = 3;
+  outCount = 5;
+  ballSpeedX= 4;
+  ballSpeedY= 0;
+  level = 4;
+  score = 0;
   gamePlay = true;  
   window.requestAnimationFrame(game);
 }
 
 
 document.addEventListener("keydown",keyDownHandler,false);
-//document.addEventListener("keyup",keyUpHandler,false);
 function keyDownHandler(e) {
   if(e.keyCode==65) {
-    pressed = pressed?false:true;
+    pressed = true;
+    setTimeout(function() {pressed=false;},250);
   }
 }
-/*function keyUpHandler(e) {
-  if(e.keyCode == 32){
-    pressed = false;
-  }
-}*/
+
 
 
 function game(){
-  outCount=3;
   draw();
-  if (ballX<0 || ballX>700)
-  {    
-    ballX=600;    
-    ballSpeed = 1;
+  if (ballX<0 || ballX>700 || ballY < 0 )
+  { 
+    if (ballX<0) { outCount--; ballSpeedY=0;}    
+    if (ballX>700) { ballSpeedX = (-ballSpeedX); ballSpeedX++; score++; ballSpeedY=0;}
+    ballX=600; ballY=340;   
+    level++;
+    var random = Math.floor(Math.random() * level*0.5) +2;
+    ballSpeedX = random;
   }
-  if(pressed && ballX> 0 && ballX<100){
-    ballSpeed = -3;
+  
+  if(pressed && ballX> 60 && ballX<90 && ballSpeedX>0 && ballY>325 && ballY<355){
+    ballSpeedX = -(ballSpeedX+4);
+    ballSpeedY = 3;
+    audio.play();
   }
-
   if(outCount>0){
     window.requestAnimationFrame(game);
+  }
+  else{
+    draw();
+    ctx.font = '40px Calibri';
+    ctx.fillText('Score : '+score,270,110);
   }
 }
 
