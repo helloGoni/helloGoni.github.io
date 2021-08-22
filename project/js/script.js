@@ -99,17 +99,19 @@ function game(){
   draw();
   if (ballX<0 || ballX>700 || ballY < 0 )
   { 
-    if (ballX<0) { outCount--; ballSpeedY=0;}    
+    if (ballX<0) { outCount--; ballSpeedY=0;}    // 못 쳤음
     if (ballX>700) { ballSpeedX = (-ballSpeedX); ballSpeedX++; score++; ballSpeedY=0;}
     ballX=600; ballY=340;   
     level++;
     var random = Math.floor(Math.random() * level*0.5) +2;
     ballSpeedX = random;
+    ballSpeedY = 0;
   }
   
   if(pressed && ballX> 60 && ballX<90 && ballSpeedX>0 && ballY>325 && ballY<355){
-    ballSpeedX = -(ballSpeedX+4);
-    ballSpeedY = 3;
+    ballSpeedX = -(ballSpeedX+5);
+    var random1 = Math.floor(Math.random()*5)+3;
+    ballSpeedY = random1;
     audio.play();
   }
   if(outCount>0){
