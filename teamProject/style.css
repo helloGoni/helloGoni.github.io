@@ -1,10 +1,7 @@
 footer {
     background-color: black;
 }
-a {
-    text-decoration: none;
-    color:inherit;
-}
+
 #sideNav {
     background-color: black;
     color : white;
@@ -27,6 +24,9 @@ a {
     width: 100px;
     text-align: center;
     font-weight: 900;
+    text-decoration: none;
+    color:inherit;
+    cursor: pointer;
 }
 #sideNav > ul > li{
     height: 70px;
@@ -34,9 +34,11 @@ a {
     text-align: center;
     padding-top : 20px;
     border-bottom : 1px solid wheat;
+    cursor: pointer;
 }
 #sideNav > ul > li:hover {
-    background-color: blue;
+    background-color: gray;
+    font-size:18px;
 }
 #pageName{
     padding-top : 0;
@@ -45,7 +47,7 @@ a {
     height: 1000px;
     width: inherit;
     background-color: rgb(145, 127, 127);
-    padding-left: 210px;
+    padding-left: 200px;
     padding-top: 10px;
     color : black;
 }
@@ -66,6 +68,7 @@ a {
     width : 150px;
     text-align: center;
     font-size : 15px;
+    cursor: pointer;
 }
 
 #topNav > ul > li:hover {
@@ -74,4 +77,8 @@ a {
 
 ul li {
   list-style: none;  
+}
+
+#inform {
+    background-color: #FFF;
 }
