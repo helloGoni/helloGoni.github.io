@@ -1,0 +1,77 @@
+footer {
+    background-color: black;
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+#sideNav {
+    background-color: black;
+    color : white;
+    width: 150px;
+    height: 1092px;
+    float : left;
+    margin-left : 30px;
+}
+#sideNav > ul {
+    -webkit-padding-start: 0;
+}
+#sideNav > ul > a {
+    padding-left :24px;
+    padding-right: 24px;
+    padding-top : 5px;
+    padding-bottom : 10px;
+    border-bottom: 1px solid white;
+    display: block;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    font-weight: 900;
+}
+#sideNav > ul > li{
+    height: 70px;
+    width : 100%;
+    text-align: center;
+    padding-top : 20px;
+    border-bottom : 1px solid wheat;
+}
+#sideNav > ul > li:hover {
+    background-color: blue;
+}
+#pageName{
+    padding-top : 0;
+}
+#mainText{
+    height: 1000px;
+    width: inherit;
+    background-color: rgb(145, 127, 127);
+    padding-left: 210px;
+    padding-top: 10px;
+    color : black;
+}
+#topNav {
+    background-color: gray;
+    width: inherit;
+    height : 80px;
+    border-bottom: 2px solid black;
+}
+#topNav > ul {
+    height : 80px;
+    margin-left : 10px;
+}
+#topNav >ul > li {
+    padding-top : 20px;
+    padding-bottom : 20px;
+    display: inline-block;
+    width : 150px;
+    text-align: center;
+    font-size : 15px;
+}
+
+#topNav > ul > li:hover {
+    background-color: ivory;
+}
+
+ul li {
+  list-style: none;  
+}
