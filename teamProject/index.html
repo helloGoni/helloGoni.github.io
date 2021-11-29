@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head><meta charset="utf-8"><title>알고리즘 마스터 . 알마</title>
-        <link rel="stylesheet" href="style.css">
+        <script src = "js/javascript.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            function changePage(page){
+                document.getElementById('mainTextView').src = page;
+            }
+        </script>
     </head>
     <body>
         <div id="main">
             <div id="sideNav">
                 <ul>
-                 <a href="#">알고리즘<br>마스터</a>
-                    <li>정렬<br>알고리즘</li>
+                 <a href="#">알고리즘<br> 마스터 </a>
+                    <li onclick= "changePage('html/Sort/ST_Index.html')">정렬<br>알고리즘</li>
                     <li>탐색<br> 알고리즘</li>
                     <li>그래프<br> 알고리즘</li>
                     <li>분할 정복 <br> 알고리즘</li>
@@ -21,14 +27,20 @@
                 <ul>
                     <li>알고리즘의<br>역사</li>
                     <li>웹 페이지<br>소개</li>
+                    <audio autoplay controls loop>
+                        <source src="">
+                    </audio>
                 </ul>
+
             </div>
             <div id="mainText">
                 <iframe id="mainTextView" title="textView" width= "97.5%" height="97.5%"
-                src="form.html"></iframe>
+                src="html/form.html"></iframe>
             </div>
         </div>
     </body>
 </html>
 <!--https://hiio.tistory.com/33?category=932745-->
 <!--https://dasima.xyz/html-colors/-->
+<!--https://jjangdali.tistory.com/entry/Javascript-iframe-%EC%9D%98-src-%EB%B0%94%EA%BE%B8%EA%B8%B0-->
+<!--https://hellogoni.github.io/teamProject/index.html-->

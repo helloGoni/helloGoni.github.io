@@ -1,0 +1,87 @@
+footer {
+    background-color: black;
+}
+
+#sideNav {
+    background-color: black;
+    color : white;
+    width: 150px;
+    height: 1092px;
+    float : left;
+    margin-left : 30px;
+}
+#sideNav > ul {
+    -webkit-padding-start: 0;
+}
+#sideNav > ul > a {
+    padding-left :24px;
+    padding-right: 24px;
+    padding-top : 5px;
+    padding-bottom : 10px;
+    border-bottom: 1px solid white;
+    display: block;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    font-weight: 900;
+    text-decoration: none;
+    color:inherit;
+    cursor: pointer;
+}
+#sideNav > ul > li{
+    height: 70px;
+    width : 100%;
+    text-align: center;
+    padding-top : 20px;
+    border-bottom : 1px solid wheat;
+    cursor: pointer;
+}
+#sideNav > ul > li:hover {
+    background-color: rgb(33, 37, 61);
+    font-size:18px;
+}
+#pageName{
+    padding-top : 0;
+}
+#mainText{
+    height: 1000px;
+    width: inherit;
+    background-color: rgb(120, 139, 155);
+    padding-left: 200px;
+    padding-top: 10px;
+    color : black;
+}
+#topNav {
+    background-color: rgb(128, 137, 160);
+    width: 100%;
+    height : 80px;
+    border-bottom: 2px solid black;
+}
+#topNav > ul {
+    height : 80px;
+    margin-left : 10px;
+}
+#topNav >ul > li {
+    padding-top : 20px;
+    padding-bottom : 20px;
+    display: inline-block;
+    width : 150px;
+    text-align: center;
+    font-size : 15px;
+    cursor: pointer;
+}
+
+#topNav > ul > li:hover {
+    background-color: rgb(168, 180, 209);
+}
+
+ul li {
+  list-style: none;  
+}
+
+#inform {
+    background-color: #FFF;
+}
+audio {
+    height: 30px;
+}
