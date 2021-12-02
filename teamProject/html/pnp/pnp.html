@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>문제 분류</h1>
+
+		<article>
+			<div>
+				컴퓨터로 풀 수 있는 모든 문제는 문제를 해결하는 알고리즘의 복잡도에 따라 분류될 수 있다.<br><br>
+
+				<b>P</b>(Polynomial) 문제: 다항식 시간 알고리즘을 가진 문제<br>
+				<b>NP</b>(Non-deterministic Polymomial) 문제:  비결정적 다항식 시간 알고리즘<br>
+				<b>NP-Complete</b> 문제: NP 문제들 중에서 NP-hard인 문제<br>
+				<b>NP-hard</b> 문제: 모든 NP 문제를 다항식 시간 안에 문제 A로 변환이 가능할 때, 그 문제 A<br><br>
+
+				풀 수 없는 문제: Unsolvable, Undecidable<br>
+				풀 수 있는 문제: Solvable, Decidable<br><br>
+			</div>
+
+			<div>
+				<h3>최적화 문제 vs 결정 문제</h3>
+				<b>결정 문제</b>: 어떤 기준을 주어주고 기준을 만족하면 대답이 “예” 또는 “아니오”로 이루어지는 문제<br>
+			ex) 외판원 결정 문제 (Travelling Salesman Decision Problem): 임의의 양수 𝑑가 주어지고, 이 𝑑보다 길지 않은 순환 일주 여행경로가 존재하는가?<br><br>
+
+				<b>최적화 문제</b>: 최적의 해를 찾는 문제<br>
+				ex) 외판원 최적화 문제: 순환 일주 여행경로 중 경로의 길이가 가장 짧은 순환 일주 여행경로를 찾아라.<br><br>
+
+				<b>두 문제 간의 상관관계</b><br>
+				임의의 최적화 문제에 대한 다항시간 알고리즘이 있으면 그에 상응하는 결정 문제에 대한 다항시간 알고리즘도 쉽게 찾을 수 있다. 또, 결정/판정 문제에 대한 해를 구하는 알고리즘이 있다면 , 추측된 해 값 d를 여러번 바꾸어 가면서 판정 문제를 여러 번 수행하여 최적화 문제의 해도 구할 수 있다.
+			</div>
+
+			<div>
+				<h3>Deterministic V.S Non-Deterministic</h3>
+				<b>결정론적 알고리즘</b>(Deterministic algorithm): 예측한 그대로 동작하는 알고리즘, 같은 입력이 들어오면 언제나 똑같은 과정을 거쳐서 언제나 똑같은 결과를 출력한다.<br><br>
+
+				<b>비결정론적 알고리즘</b>(Non-deterministic): 같은 입력이 주어지더라도 실행될 때마다 다른 행동을 취하는 알고리즘. 추측을 통해 문제를 해결한다. 내, 외부환경 등이 변수로서 알고리즘 동작에 영향을 준다.
+			</div>
+
+
+			P ⊆ NP 이다. 해를 추측하는 단계를 생략하고,해를 확인하는 단계 대신에 직접 다항식 시간에 해를 구하고, 맞다라고 하면 되기 때문이다.<br>
+			그러나 P ≠ NP임은 확인되지 않았다.<br><br>
+
+			P ≠ NP가 사실이라는 가정하에, 어떤 문제가 P 바깥에 있는지 판단하는 방법: 주어진 어떤 문제가 NP-complete 문제 만큼 어렵다고 보일 수 있다면 그 문제는 분명 P 바깥이다. 단, 모든 P 바깥의 문제가 이 방법으로 확인되는 것은 아님.
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p276-279.
+			
+		</footer>
+
+		
+		<a href="pnpIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="javascript:alert('이전 문서가 존재하지 않습니다.')"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="pnpTrait.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

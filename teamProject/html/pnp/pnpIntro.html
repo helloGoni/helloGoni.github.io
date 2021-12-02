@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>NP-완전 문제의 소개와 활용</h1>
+		<article>
+			<div>
+				<h3>SAT(satisfiablility)</h3>
+				부울 변수 (Boolean variable)들이 ∨ (𝑂𝑅)로 표현된 논리식이 여러개 주어질 때, 이 논리식들을 모두 만족시키는 각 부울 변수의 값을 찾는 문제이다.<br><br>
+
+				<ul>
+					<li>반도체 칩 (Chip)을 디자인하는 전자 디자인 자동화 (Electronic Design Automation)</li>
+					<li>소프트웨어에 핵심적인 부분인 형식 동치 관계 검사 (Formal Equivalence Checking)</li>
+					<li>모델 검사 (Model Checking)</li>
+					<li>형식 검증 (Formal Verification)</li>
+					<li>자동 테스트 패턴 생성 (Automatic Test Pattern Generation)</li>
+					<li>인공지능에서의 계획 (Planning)과 명제 모델을 컴파일하는 지식 컴파일 (Knowledge Compilation)</li>
+					<li>생물 정보 공학 분야에서 염색체로부터 질병 인자를 추출 또는 염색체의 진화를 연구하는데 사용되는 단상형 추론 (Haplotype Inference) 연구</li>
+					<li>소프트웨어 검증 (Software Verification)</li>
+					<li>자동 정리 증명 (Automatic Theorem Proving) 등</li>
+				</ul>
+			</div>
+
+
+			<div>
+				<h3>부분 집합의 합(Subset Sum)</h3>
+				주어진 정수의 집합 S의 원소의 합이 K가 되는 S의 부분 집합을 찾는 문제이다.<br><br>
+
+				<ul>
+					<li>암호 시스템 개발에 사용되는데, 그 이유는 문제 자체는 얼핏 보기에 매우 쉬우나 해결하기는 매우 어렵기 때문이다.</li>
+					<li>실용적인 전자 태그 암호 시스템 (RFID Cryptosystem)</li>
+					<li>격자 기반 (Lattice-based) 암호화 시스템</li>
+					<li>공개 암호 시스템 (Public Key Cryptography)</li>
+					<li>컴퓨터 패스워드 (Password) 검사 및 메시지 검증</li>
+					<li>음악에도 적용하여 스마트폰 앱으로도 만들어진 사례도 있다.</li>
+				</ul>
+			</div>
+
+
+			<div>
+				<h3>분할(Partition)</h3>
+				주어진 정수의 집합 S를 분할하여 원소의 합이 같은 2개의 부분 집합을 찾는 문제이다.<br><br>
+
+				<ul>
+					<li>부분 집합의 합 문제의 특별한 경우이다. </li>
+					<li>즉, 부분 집합의 합 문제에서 부분 집합의 합이 전체 원소의 합의 1/2이라고 하면 분할 문제와 동일하게 된다.</li>
+					<li>분할 문제를 보다 일반화하여 분할할 부분 집합 수를 2개에서 𝑘개로 확장시키면, 더욱 더 다양한 곳에 응용 가능하다.</li>
+					<li>Switching Network에서 채널 그래프 비교</li>
+					<li>시간과 장소를 고려한 컨테이너의 효율적 배치</li>
+					<li>네트워크 디자인</li>
+					<li>인공 지능 신경망 네트워크 (Artificial Neural Network)의 학습 및 패턴 인식 (Pattern Recognition)</li>
+					<li>로봇 동작 계획 (Robotic Motion Planning)</li>
+					<li>회로 및 VLSI 디자인</li>
+					<li>의학 전문가 시스템 (Medical Expert System), 유전자의 군집화 (Gene Clustering) 등</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>0-1 배낭(Knapsack)</h3>
+				배낭의 용량이 𝐶이고, 𝑛개의 물건의 각각의 무게와 가치가 𝑤𝑖와 𝑣𝑖일 때, 단, 𝑖 = 1, 2, ⋯ , 𝑛, 배낭에 담을 수 있는 물건의 최대 가치를 찾는 문제이다. 단, 담을 물건의 무게의 합이 배낭의 용량을 초과하지 말아야 한다. <br><br>
+
+				<ul>
+					<li>다양한 분야에서 의사 결정 과정에 활용된다.</li>
+					<li>원자재의 버리는 부분을 최소화시키는 분할</li>
+					<li>금융 분야에서 금융 포트폴리오 선택</li>
+					<li>자산 투자의 선택</li>
+					<li>주식 투자</li>
+					<li>다차원 경매 (Combinatorial Auction)</li>
+					<li>암호학 분야에서 암호 생성 (Merkle–Hellman Knapsack Cryptosystem)</li>
+					<li>게임 스도쿠 (Sudoku) 등에 활용된다</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>정점 커버(Vertex Cover)</h3>
+				정점 커버란 주어진 그래프 𝐺 = (𝑉, 𝐸)에서 각 선분의 양 끝점들 중에서 적어도 1개의 점을 포함하는 집합이다. 정점 커버 문제는 최소 크기의 정점 커버를 찾는 문제이다.<br><br>
+
+				<ul>
+					<li>집합 커버 문제의 특별한 경우이다. 다시 말하면 집합 커버 문제보다 더 일반적인 문제이다.</li>
+					<li>부울 논리 최소화 (Boolean Logic Minimization)</li>
+					<li>센서 (Sensor) 네트워크에서 사용되는 센서 수의 최소화</li>
+					<li>무선 통신 (Wireless Telecommunication)</li>
+					<li>토목 공학 (Civil Engineering)</li>
+					<li>전기 공학 (Electrical Engineering)</li>
+					<li>최적 회로 설계 (Circuit Design)</li>
+					<li>네트워크 플로우 (Network Flow)</li>
+					<li>생물 정보 공학에서의 유전자 배열 연구</li>
+					<li>미술관, 박물관, 기타 철저한 경비가 요구되는 장소의 경비</li>
+					<li>시스템 - CCTV 카메라의 최적 배치 (Art Gallery 문제) 등에 활용된다.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>독립 집합(Independence Set)</h3>
+				독립 집합이란 주어진 그래프 𝐺 = (𝑉, 𝐸)에서 연결하는 선분이 없는 점들의 집합이다. 독립 집합 문제는 최대 크기의 독립 집합을 찾는 문제이다.<br><br>
+
+				<ul>
+					<li>컴퓨터 비젼 (Computer Vision)</li>
+					<li>패턴 인식 (Pattern Recognition)</li>
+					<li>정보/코딩 이론 (Information/Coding Theory)</li>
+					<li>지도 레이블링 (Map Labeling)</li>
+					<li>분자 생물학 (Molecular Biology)</li>
+					<li>스케줄링 (Scheduling)</li>
+					<li>회로 테스트</li>
+					<li>CAD 등에 활용된다.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>클리크(Clique)</h3>
+				클리크란 주어진 그래프 𝐺 = (𝑉, 𝐸)에서 모든 점들 사이를 연 결하는 선분이 있는 부분 그래프이다. 클리크 문제는 최대 크기의 클리크를 찾는 문제이다.<br><br>
+
+				<ul>
+					<li>생물 정보 공학에서 유전자 표현 데이터 (Gene Expression Data)의 군집화</li>
+					<li>단백질 구조 예측 연구</li>
+					<li>단백질 특성 연구</li>
+					<li>생태학에서 먹이 그물 (Food Web)에 기반한 종 (Species)에 관한 관계 연구</li>
+					<li>진화 계보 유추를 위한 연구</li>
+					<li>전자 공학에서는 통신 네트워크 분석</li>
+					<li>효율적인 집적 회로 설계</li>
+					<li>자동 테스트 패턴 생성 (Automatic Test Pattern Generation)</li>
+					<li>화학 분야에서는 화학 데이터베이스에서 화학 물질의 유사성 연구와 2개의 화학 물질의 결합의 위치를 모델링하는데 활용된다.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>그래프 색칠하기(Graph Coloring)</h3>
+				그래프 색칠하기란 주어진 그래프 𝐺 = (𝑉, 𝐸)에서 인접한 점 들을 서로 다른 색으로 색칠하는 것이다. 그래프 색칠하기 문제는 가장 적은 수의 색을 사용하여 그래프를 색칠하는 문제이다.<br><br>
+
+				<ul>
+					<li>생산 라인, 시간표 등의 스케줄링</li>
+					<li>무선 네트워크에서 주파수 할당 (Bandwidth Allocation)</li>
+					<li>컴파일러의 프로그램 최적화</li>
+					<li>패턴 인식</li>
+					<li>데이터 압축 (Data Compression)</li>
+					<li>스도쿠 (Sudoku) 게임: 81개의 점이 있는 그래프에서 9개의 색으로 점을 색칠하기와 동일하다.</li>
+					<li>생물학에서 생체 분석</li>
+					<li>고고학 자료 분석에 응용된다.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>집합 커버(Set Cover)</h3>
+				주어진 집합 𝑆 = {1, 2, 3, ⋯ , 𝑛}에 대해서 𝑆의 부분 집합들이 주어질 때, 이 부분 집합들 중에서 합집합하여 S와 같게 되는 부분 집합들을 집합 커버라고 한다. 집합 커버 문제는 가장 적은 수의 부분 집합으로 이루어진 집합 커버를 찾는 문제이다.<br><br>
+
+				<ol>
+					<li>집합 커버 문제의 응용은 정점 커버 문제의 응용을 포함</li>
+					<li>비행기 조종사 스케줄링 (Flight Crew Scheduling)</li>
+					<li>조립 라인 균형화 (Assembly Line Balancing)</li>
+					<li>정보 검색 (Information Retrieval)</li>
+					<li>도시 계획 (City Planning)에서 공공 기관 배치하기</li>
+					<li>컴퓨터 바이러스 찾기</li>
+					<li>기업의 구매 업체 선정</li>
+					<li>기업의 경력 직원 고용 등에도 활용된다.</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>최장 경로(Longest Path)</h3>
+				주어진 가중치 그래프 𝐺 = (𝑉, 𝐸)에서 시작점 𝑠에서 도착점 𝑡까지의 가장 긴 경로를 찾는 문제이다. 단, 선분의 가중치는 양수이고, 찾는 경로에는 반복되는 점이 없어야 한다.<br><br>
+
+				<h3>여행자(Traveling Salesman) 문제</h3>
+				주어진 가중치 그래프 𝐺 = (𝑉, 𝐸)에서, 임의의 한 점에서 출발 하여, 다른 모든 점들을 1번씩만 방문하고, 다시 시작점으로 돌아오는 경로 중에서 최단 경로를 찾는문제이다.<br><br>
+
+				<h3>헤밀토니안 사이클(Hamiltonian Cycle)</h3>
+				주어진 그래프 𝐺 = (𝑉, 𝐸)에서, 임의의 한 점에서 출발하여 모든 다른 점들을 1번씩만 방문하고, 다시 시작점으로 돌아오는 경로를 찾는 문제이다.<br><br>
+
+				<ul>
+					<li>운송 및 택배 사업에서의 차량 운행 (Vehicle Routing)</li>
+					<li>가전 수리 및 케이블 회사에서의 서비스 콜의 스케줄링</li>
+					<li>회로 기판에 구멍을 뚫기 위한 기계의 스케줄링</li>
+					<li>회로 기판에서의 배선 (Wiring)</li>
+					<li>논리 회로 테스트</li>
+					<li>건축 시공에서의 배관 및 전선 배치</li>
+					<li>데이터의 군집화 (Clustering) 등에 활용된다.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>통 채우기(Bin Packing)</h3>
+				𝑛개의 물건이 주어지고, 통 (bin)의 용량이 𝐶일 때, 가장 적은 수의 통을 사용하여 모든 물건을 통에 채우는 문제이다. 단, 각 물건의 크기는 𝐶보다 크지 않다.<br><br>
+
+				<ul>
+					<li>다중 처리 장치 (Multiprocessor) 스케줄링</li>
+					<li>멀티미디어 저장 장치 시스템</li>
+					<li>Video-on-Demand 서버의 비디오 데이터 배치 등의 자원 할당 (Resource Allocation)</li>
+					<li>생산 조립 라인에서의 최적화</li>
+					<li>산업 공학, 경영 공학의 주요 분야인 공급 망 경영 (Supply Chain Management)</li>
+					<li>트럭, 컨테이너에 화물 채우기</li>
+					<li>재료 절단 (Cutting Stock) 문제</li>
+					<li>작업의 부하 균등화 (Load Balancing)</li>
+					<li>스케줄링 (Scheduling)</li>
+					<li>프로젝트 경영 (Project Management)</li>
+					<li>재무 예산 집행 계획 (Financial Budgeting) 등에 활용된다.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3>작업 스케줄링(Job Scheduling)</h3>
+				𝑛개의 작업, 각 작업의 수행 시간 𝑡<sub>𝑖</sub>, 단, 𝑖 = 1, 2, 3, ⋯ , 𝑛, 그리고 𝑚개의 동일한 성능의 기계가 주어질 때, 모든 작업이 가장 빨리 종료되도록 작업을 기계에 배정하는 문제이다.<br><br>
+
+				<ul>
+					<li>컴퓨터 운영 체제의 작업 스케줄링</li>
+					<li>다중 프로세서 (Multiprocessor) 스케줄링</li>
+					<li>웹 서버 (Web Server)에서 사용자 질의 처리</li>
+					<li>주파수 대역 스케줄링 (Bandwidth Scheduling)</li>
+					<li>기타 산업 및 경영 공학에서의 공정 스케줄링</li>
+					<li>시간표 작성 (Timetable Design)</li>
+					<li>항공 산업에서 공항 게이트 (Gate) 스케줄링</li>
+					<li>조종사 스케줄링</li>
+					<li>정비사 스케줄링</li>
+				</ul>
+			</div>
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p283-293.
+			
+		</footer>
+
+		<a href="pnpIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="pnpTrait.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="javascript:alert('다음 문서가 존재하지 않습니다.')"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

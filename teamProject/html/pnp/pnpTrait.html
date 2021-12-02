@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>NP-완전 문제의 특성</h1>
+		<article>
+			<div>
+				<h3>문제의 환원</h3>
+				NP-완전 문제를 이해하기 위해서는 문제의 변환, 혹은 환원이 무엇인지 알아야한다.<br>
+				문제 A를 해결하기 위해서, 문제 B를 해결하는 알고리즘을 사용할 때, 문제 A의 입력을 문제 B의 형태로 변환하는 것을 의미한다.<br><br>
+
+				문제를 변환하는 전 과정의 시간복잡도는 문제 A의 입력을 문제 B의 입력으로 변환하는 시간, 문제 B를 위한 알고리즘이 수행되는 시간, 문제 B의 해를 문제 A의 해로 변환하는 시간이다.<br><br>
+
+				 따라서, 문제 환원/변환의 시간 복잡도는 두 번째 단계인 ‘문제 B를 해결하는 복잡도’에 의존한다.
+			</div>
+
+			<div>
+				NP-완전 문제 집합들 사이의 논리 관계: 거대한 군을 이룸: 어느 하나의 NP-완전 문제가 다항 시간에 풀리면 모든 다른 NP완전 문제도 다항식 시간에 해를 구할 수 있는 논리적 연결관계를 갖는다.<br><br>
+
+				따라서, NP-완전 문제 중 하나라도 P에 속한다는 것을 증명한다면 모든 NP 문제가 P에 속하기 때문에, P-NP 문제가 P=NP의 형태로 풀리게 된다.<br><br>
+
+				반대로 NP-완전 문제 중의 하나가 P에 속하지 않는다는 것이 증명된다면 P=NP에 대한 반례가 되어 P-NP 문제는 P≠NP의 형태로 풀리게 된다.<br><br>
+			</div>
+
+			<div>
+				<h3>NP-hard</h3>
+				어느 문제 A에 대해서, 만일 모든 NP 문제가 문제 A로 다항식 시간 안에 환원/변환이 가능하다면, 문제 A는 NP-하드문제이다. 즉 적어도 어떤 NP 문제보다 해결하기 어렵다는 뜻이다.<br><br>
+
+				따라서 반드시 NP 문제일 필요가 없다.
+			</div>
+
+			<div>
+				<h3>NP 이론의 유용성</h3>
+				어떤 문제가 NP-Complete/Hard임이 확인되면, 쉬운 알고리즘을 찾으려는 헛된 노력은 일단 중지하고, 주어진 시간 예산 내에서 최대한 좋은 해를 찾는 알고리즘(heuristic) 개발에 집중할 수 있다.
+			</div>
+
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p163-169.
+			
+		</footer>
+
+		<a href="pnpIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="pnp.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="pnpIntro.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>
