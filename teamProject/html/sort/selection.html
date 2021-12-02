@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>선택 정렬<span>SelectionSort</span></h1>
+		<article>
+			<div>
+				<figure>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/Ns4TPTC8whw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+				<figcaption>선택 정렬 영상</figcaption>
+			</figure><br><br>
+
+			<b>선택 정렬</b>(Selection Sort)은 입력 배열 전체에서 최솟값을 선택하여 배열의 0번 원소와 자리를 바꾸고, 그 다음에는 0번 원소를 제외한 나머지 원소에서 최솟값을 선택하여 1번 원소와 자리를 바꾼다. 이러한 방식으로 마지막에 2개의 원소 중에서 작은 값을 선택하여 자리를 바꿈으로써 오름차순의 정렬을 마친다.
+
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: 크기가 n인 배열<br>
+				출력: 정렬된 배열 A
+				<ol id="list1" type="1">
+					<li>for i = 1 to n-2</li>
+					<li>&nbsp;min i</li>
+					<li>&nbsp;for j = i+1 to n-1 {</li>
+					<li>&nbsp;&nbsp;if(A[j] &lt; A[min])</li>
+					<li>&nbsp;&nbsp;&nbsp;min = j }</li>
+					<li>&nbsp;swap(A[i], A[min])</li>
+					<li>return 배열A</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+				Line 1의 for 루프가 n-1번 수행되는데 i=0일때 line 3에서 for 루프는 n-1번 수행되고, i=1일때 n-2번 수행되고... 마지막으로 1번 수행되므로 총 n(n-1)/2이다. 루프 내부의 if 조건이 True일때 자리바꿈은 O(1)시간이 걸린다. 따라서 O(n(n-1)/2)×O(1) -&gt; O(n<sup>2</sup>)이다.
+
+			</div>
+
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			유튜브: <a href="https://youtu.be/Ns4TPTC8whw">https://youtu.be/Ns4TPTC8whw</a><br>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p231-233.
+			
+		</footer>
+
+		<a href="sortIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="bubble.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="insertion.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

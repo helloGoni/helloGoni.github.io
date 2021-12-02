@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>분할 정복 알고리즘이란</h1>
+
+		<article>
+			<b>분할 정복 알고리즘</b>(Divide-and-Conquer algorithm)이란 주어진 문제의 입력을 <b>분할하여 문제를 해결</b>하는 방식의 알고리즘이다. 분할된 입력에 대하여 동일한 알고리즘을 적용하여
+			해를 계산하며, 이들의 해를 취합하여 원래 문제의 해를 얻는다. <br>여기서 분할된 입력에 대한 문제를 <b>부분문제</b>라고 하고, 부분문제의 해를 <b>부분해</b>라고 한다.
+
+			
+			<br><br>
+
+			<b>주의할 점</b><br>
+			분할 정복이 부적절한 경우는 입력이 분할될 때마다 분할된 부분문제의 입력 크기의 합이 <b>분할되기 전의 입력 크기보다 매우 커지는 경우</b>이다. 예를 들면 피보나치 수를 구하는데
+			F(n) = F(n-1) + F(n-2) 로 정의되므로 분할마다 입력 크기가 거의 2배로 늘어나게 된다. 따라서 피보나치 수를 구하는 데에는 분할정복이 부적절하다.<br>
+			또한 취합 과정에서, <b>입력을 분할만 한다고 해서 효율적인 알고리즘이 만들어지는 것은 아니다</b>는 것을 주의하여야 한다.
+			<br><br>기본적인 분할 정복 알고리즘으로는 <b>합병 정렬</b>, <b>퀵 정렬</b>, <b> 선택 문제</b>, <b>최근접 점의 쌍 찾기</b> 등이 있다.
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p54-85.
+			
+		</footer>
+
+		
+		<a href="divideIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="javascript:alert('이전 문서가 존재하지 않습니다.')"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="merge.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

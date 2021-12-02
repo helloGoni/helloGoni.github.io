@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>최근접 점의 쌍 찾기<span>Closest Pair</span></h1>
+		<article>
+			<div>
+				최근접 점의 쌍 찾기(Closest Pair)문제는 2차원 평면상의 n개의 점이 입력으로 주어질 때, 거리가 가장 가까운 한 쌍의 점을 찾는 문제이다.
+				<b>평면의 n개의 점을 1/2로 분할</b>하여 각각의 부분문제에서 최근접 점의 쌍을 찾고, 2개의 부분해 중에서 짧은 거리를 가진 점의 쌍을 찾는다.
+
+
+				<!---->
+
+
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: 크기가 n인 배열<br>
+				출력: 정렬된 배열 A
+				<ol id="list1" type="1">
+					<li>for each gap h = [h<sub>0</sub> &gt; h<sub>1</sub> &gt; ... &gt; h<sub>k</sub> = 1 &gt;] {</li>
+					<li>&nbsp;for i = h to n-1 {</li>
+					<li>&nbsp;&nbsp;CurrentElement = A[i];</li>
+					<li>&nbsp;&nbsp;j = i</li>
+					<li>&nbsp;&nbsp;while(j >=h) and (A[j-h] &gt; CurrentElement) {</li>
+					<li>&nbsp;&nbsp;&nbsp;A[j] = A[j - h];</li>
+					<li>&nbsp;&nbsp;&nbsp;j= j - h;</li>
+					<li>&nbsp;&nbsp;&nbsp;}</li>
+					<li>&nbsp;&nbsp;A[j] = CurrentElement; }</li>
+					<li>return 배열A</li>
+
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+
+				쉘 정렬의 수행 속도는 간격 선정에 따라 좌우된다. 지금까지 알려진 가장 좋은 성능을 보이는 간격은 1 4 10 23 57 132 301 701이고, 701이후는 아직 밝혀지지 않았다.<br><br>
+
+				쉘 정렬의 최악의 경우의 시간 복잡도는 하바드의 간격인 2<sup>k</sup>-1을 사용하면 시간 복잡도는 O(n<sup>1.5</sup>)가 된다고 밝혀지고 있다. 또한 다양한 실험을 통해 쉘 정렬의 시간 복잡도는 O(n<sup>1.25</sup>)로 알려지고 있다. 그러나 쉘 정렬의 시간 복잡도는 아직 풀리지 않은 문제로 남아있다. 이는 가장 좋은 간격을 알아내야하는 것이 선행되어야하기 때문이다.<br><br>
+
+				쉘 정렬은 입력 크기가 매우 크지 않은 경우에 매우 좋은 성능을 보인다.
+			</div>
+
+			<div>
+				<h3>사용처</h3>
+				임베디드(Embedded) 시스템에서 주로 사용되는데, 쉘 정렬의 특징인 간격에 따른 그룹별 정렬 방식이 하드웨어로 정렬 알고리즘을 구현하는 데, 매우 적합하기 때문이다.
+			</div>
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p74-83.
+			
+		</footer>
+
+		<a href="divideIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="selection.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="javascript:alert('다음 문서가 존재하지 않습니다.')"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

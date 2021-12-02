@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>합병 정렬<span>Merge Sort</span></h1>
+		<article>
+			<div>
+				<figure>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/XaqR3G_NVoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+					<figcaption>합병 정렬 영상</figcaption>
+				</figure><br><br>
+
+			<b>합병 정렬</b>(Merge Sort)은 입력이 2개의 <b>부분문제로 분할</b>되고, 부분문제의 크기가 1/2로 감소하는 분할 정복 알고리즘이다.
+			즉, n개의 숫자들을 n/2개씩 2개의 부분문제로 <b>분할</b>하고, 각각의 부분문제를 재귀적으로 <b>합병</b> 정렬한 후, 2개의 정렬한 부분을 <b>합병하여 정렬(정복)</b>한다.
+			<br>즉, <b>합병 과정이 문제를 정복</b>하는 것이다.
+
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				MergeSort(A,p,q)<br>
+				입력: A[p]~A[q]<br>
+				출력: 정렬된 A[p]~A[q]
+				<ol id="list1" type="1">
+					<li>if ( p &lt; q ) {</li>
+					<li>&nbsp;k = |(p+q)/2|</li>
+					<li>&nbsp;MergeSort(A,p,k) // 앞부분 재귀 호출</li>
+					<li>&nbsp;MergeSort(A,k+1,q) // 뒷부분 재귀 호출</li>
+					<li>&nbsp;A[p]~A[k]와 A[k+1]~A[q]를 합병한다.</li>
+					<li>}</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+				분할하는 부분은 배열의 중간 인덱스 계산과 2번의 재귀 호출을 하므로 O(1)이다.<br>
+				합병을 하는 수행 시간은 입력의 크기에 비례한다. 즉, 2개의 정렬된 배열 A와 B의 크기가 각각 n과 m이라면,  최대 비교 횟수는(n+m-1)이다.
+				왜냐하면 합병하는 데 2개의 숫자를 1번 비교할 때마다, 하나의 승자가 탄생하고, 승자는 합병된 배열 C에 저장되기 때문에 따라서 배열 C에는 결국 배열 A와 B의 모든 숫자들이
+				저장되나, 가장 마지막에 저장되는 숫자는 비교할 숫자가 없으므로 합병의 시간복잡도는 O(m+n) 이다. <br>그러나 n을 계속하여 2로 나누다가 더이상 나눌 수 없는
+				크기인 1이 될 때 분할을 중단하는데 따라서 logn의 층 수가 생긴다.
+				<br>따라서 합병 정렬의 시간 복잡도는 <b>O(nlogn)</b>이다.
+			</div>
+
+			<div>
+				<h3>활용</h3>
+				합병 정렬은 외부정렬의 기본이 되는 정렬 알고리즘으로 연결 리스트에 있는 데이터를 정렬할 때에도 퀵 정렬이나 힙 정렬보다 훨씬 효율적이다.
+				또한 멀티코어 CPU와 다수의 프로세서로 구성된 그래픽 처리 장치의 등장으로 정렬 알고리즘을 병렬화하는 데에 합병 정렬 알고리즘이 활용된다.
+			</div>
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			유튜브: <a href="https://www.youtube.com/embed/XaqR3G_NVoo">https://www.youtube.com/embed/XaqR3G_NVoo</a><br>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p56-60.
+			
+		</footer>
+
+		<a href="divideIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="divide.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="quick.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

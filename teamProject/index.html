@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head><meta charset="utf-8"><title>알고리즘 마스터 . 알마</title>
-        <script src = "js/javascript.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <script>
             function changePage(page){
                 document.getElementById('mainTextView').src = page;
             }
-        </script>
+        </script>        
     </head>
     <body>
         <div id="main">
             <div id="sideNav">
                 <ul>
                  <a href="#">알고리즘<br> 마스터 </a>
-                    <li onclick= "changePage('html/Sort/ST_Index.html')">정렬<br>알고리즘</li>
-                    <li>탐색<br> 알고리즘</li>
-                    <li>그래프<br> 알고리즘</li>
-                    <li>분할 정복 <br> 알고리즘</li>
-                    <li>동적 계획법<br>알고리즘</li>
-                    <li>탐욕<br> 알고리즘</li>
-                    <li>백트래킹<br>알고리즘</li>
+                    <li onclick= "changePage('html/sort/sortIndex.html')">정렬<br>알고리즘</li> <!--얘는 완벽히 끝-->
+                    <li onclick= "changePage('html/greedy/greedyIndex.html')">그리디<br> 알고리즘</li> <!--얘는 완벽히 끝-->
+                    <li onclick= "changePage('html/pnp/ST_Index.html')">P - NP <br> 문제</li>
+                    <li onclick= "changePage('html/divide/divideIndex.html')">분할 정복 <br> 알고리즘</li>
+                    <li onclick= "changePage('html/dp/dpIndex.html')">동적 계획법<br>알고리즘</li>
                 </ul>
             </div>
             <div id="topNav">
                 <ul>
+                    <li onclick= "changePage('html/form.html')">웹 페이지<br>소개</li>
                     <li>알고리즘의<br>역사</li>
-                    <li>웹 페이지<br>소개</li>
                     <audio autoplay controls loop>
-                        <source src="">
+                        <source src="media/bgm.mp3">
                     </audio>
                 </ul>
 
@@ -42,5 +39,3 @@
 </html>
 <!--https://hiio.tistory.com/33?category=932745-->
 <!--https://dasima.xyz/html-colors/-->
-<!--https://jjangdali.tistory.com/entry/Javascript-iframe-%EC%9D%98-src-%EB%B0%94%EA%BE%B8%EA%B8%B0-->
-<!--https://hellogoni.github.io/teamProject/index.html-->

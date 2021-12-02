@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>버블 정렬<span>BubbleSort</span></h1>
+		<article>
+			<div>
+				<figure>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/lyZQPjUT5B4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+				<figcaption>버블 정렬 영상</figcaption>
+			</figure><br><br>
+
+			<b>버블 정렬</b>(Bubble Sort)은 이웃하는 숫자를 비교하여 작은 수를 앞쪽으로 이동시키는 과정을 반복하여 정렬하는 알고리즘이다.
+
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: 크기가 n인 배열<br>
+				출력: 정렬된 배열 A
+				<ol id="list1" type="1">
+					<li>for pass = 1 to n-1</li>
+					<li>&nbsp;for i = 1 to n-pass</li>
+					<li>&nbsp;&nbsp;if A[i-1] &gt; A[i]</li>
+					<li>&nbsp;&nbsp;&nbsp;swap(A[i-1], A[i])</li>
+					<li>return 배열A</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+				pass = 1에서 n-1번 비교하고, pass = 2에서 n-2번 비교하고... pass = n-1에서 1번 비교한다. 그러므로 총 비교 횟수는 n(n-1)/2이다. if 조건이 True일때 자리 바꿈은 O(1)시간이 걸린다. 그러므로 버블 정렬 알고리즘의 시간 복잡도는 O(n(n-1)/2)×O(1) -&gt; O(n<sup>2</sup>)이다.
+			</div>
+
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			유튜브: <a href="https://youtu.be/lyZQPjUT5B4">https://youtu.be/lyZQPjUT5B4</a><br>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p227-230.
+			
+		</footer>
+
+		<a href="sortIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="sort.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="selection.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

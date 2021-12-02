@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>편집 거리 문제<span>EditDistance</span></h1>
+		<article>
+			<div>
+			<b>편집 거리</b>(Edit Distance) 문제는 문서 편집기를 사용하는 중에 스트링 S를 T로 변환시키고자 할 때, 삽입(insert), 삭제(delete), 대체(substitute) 연산을 최소로 사용하는 횟수를 구하는 문제이다.<br><br>
+
+			부분문제를 정의하면 E[i, j]는 S의의 접두부의 i개의 문자를 T의 접두부 j개 문자로 변환시키는데 필요한 편집 거리를 의미한다.<br><br>
+
+			부분문제를 구하는 방법은, 예를 들어서 E[i,j]의 경우 E[i,j-1]에서 수정 연산을 한번 더 하거나, E[i-1,j]에서 수정 연산을 한번 더 하거나 E[i-1,j-1]이 E[i,j]이 될 때 수정 연산을 하는 경우 중에서 가장 작은 값을 찾는 것이다. 
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: 스트링 S, T 단 S와 T의 길이는 각각 m과, n이다.<br>
+				출력: S를 T로 변환하는 편집거리, E[m, n]
+				<ol id="list1" type="1">
+					<li>for i = 0 to m  E[i, 0] = i<li>
+					<li>for j = 0 to n  K[0, j] = j<li>
+					<li>for i = 1 to m { <li>
+					<li>&nbsp;for j = 1 to n { </li>
+					<li>&nbsp;&nbsp;if(w <sub>i</sub> > w)</li>
+					<li>&nbsp;&nbsp;&nbsp;E[i, j] = min(E[i,j-1]+1, E[i-1,j]+1, E[i-1,j-1]+ α)}}</li>
+					<li>return E[m, n] <li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+				편집 거리 알고리즘의 시간 복잡도는 O(mn)이다. 여기서 m과 n은 두 스트링의 각각의 길이이다. 그 이유는 총 부분 문제의 수가 배열 E의 원소의 수인 m × n이고, 각 부분 문제를 계산하기 위해서 주변 3개의 부분문제들의 해를 참조한 후 최솟값을 찾는 것이므로 O(1) 시간이 걸리기 때문이다.
+
+			</div>
+
+			<div>
+				<h3>사용처</h3>
+				편집 거리 문제의 응용 사례는 매우 다양하다. 2개의 스트링들 사이의 편집 거리가 작으면 이 스트링들이 서로 유사하다고 판단할 수 있으므로, <b>생물 정보 공학(Bioinformatics)</b> 및 <b>의학</b> 분야에서 두 개의 유전자가 유사한지 측정하는데 사용된다. 그 외에서 <b>철자 오류 검색</b>(Spell Checker), <b>자연어 번역</b>(Natural Language Translation) 소프트웨어 등에도 활용된다.
+			</div>
+
+
+		</article>
+
+		<footer>
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p181-190.
+		</footer>
+
+		<a href="dpIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="matrix.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="knapsack.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>개

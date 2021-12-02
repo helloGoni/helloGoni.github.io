@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>배낭 문제<span>Knapsack</span></h1>
+		<article>
+			<div>
+			<b>배낭</b>(Knapsack) 문제는 n개의 물건과 각 물건 i의 무게 w<sub>i</sub>와 가치 v<sub>i</sub>가 주어지고 배낭의 용량이 C일 때, 배낭에 담을 수 있는 물건의 최대 가치를 찾는 문제이다.<br><br>
+
+			이 문제는 제한적인 입력에 대해서 동적 계획 알고리즘으로 해결할 수 있다.<br><br>
+
+			부분문제를 정의할 때, 물건은 하나씩 늘려가면서 고려하고, 배낭이 담을 수 있는 무게를 0에서 C까지 늘려가면서, 물건을 배낭에 담는 것이 가치가 더 커지는 것인지 결정한다.<br><br>
+
+			배낭에 물건을 담는 경우와 담지 않는 경우는 K[i, w] = K[i-1, w]<br>
+			담는 경우는 현재 무게인 w에서 물건 i의 무게인 w<sub>i</sub>를 뺀 상태에서 물건을 (i-1)까지 고려했을 때의 최대 가치인 K[i-1, w-w<sub>i</sub>]와 물건 i 가치의 합이 K[i,w]가 되는 것이다.
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: 배낭의 용량 C, n개의 물건과 각 물건 i의 무게 w<sub>i</sub>와 가치 v<sub>i</sub>, 단, i = 1, 2 ..., n<br>
+				출력: K[n,C]
+				<ol id="list1" type="1">
+					<li>for i = 1 to n  K[i, 0] = 0<li>
+					<li>for w = 1 to C  K[0, w] = 0<li>
+					<li>for i = 1 to n { <li>
+					<li>&nbsp;for w = 1 to C { </li>
+					<li>&nbsp;&nbsp;if(w <sub>i</sub> > w)</li>
+					<li>&nbsp;&nbsp;&nbsp;K[i, w] = K[i-1, w]</li>
+					<li>&nbsp;&nbsp;else</li>
+					<li>&nbsp;&nbsp;&nbsp;K[i, w] = max(K[i-1, w], K[i-1, w-w<sub>i</sub>]+v<sub>i</sub>) }}</li>
+					<li>return K[n, C] <li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+				하나의 부분문제에서 해를 구할 때, 시간복잡도는 Line 5에서의 무게를 한 번 비교한 후 Line 6에서는 1개의 부분문제의 해를 참조하고, Line 8에서는 2개의 해를 참조한 계산이므로 O(n)의 시간이 걸린다. 그런데 부분문제의 수는 원소 수인, n × C개이다. 따라서 시간 복잡도는 O(nC)이다.
+			</div>
+
+			<div>
+				<h3>사용처</h3>
+				다양한 분야에서 의사결정에 활용된다. 예를 들어서 <b>원자재의 버리는 부분을 최소화하기 위한 자르기/분할</b>, <b>금융 포트폴리오와 자산 투자의 선택</b>, <b>암호 생성 시스템</b>(Merkle-Hellma Knapsack Cryptosystem) 등에 활용된다.
+			</div>
+
+
+		</article>
+
+		<footer>
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p191-200.
+		</footer>
+
+		<a href="dpIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="edit.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="coin.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

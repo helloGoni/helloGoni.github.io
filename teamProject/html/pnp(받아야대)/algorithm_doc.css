@@ -1,0 +1,101 @@
+h1 {
+	font-size: 30px
+}
+
+h1 > span {
+	font-size: 26px
+}
+
+article {
+    font-size: 16px
+    margin-bottom: 40px;
+}
+
+article > h3 {
+    font-size: 20px
+}
+
+article > div {
+	margin-bottom: 60px;
+}
+
+footer {
+	font-size: 16px
+	margin-bottom: 40px;
+}
+
+footer > h3 {
+	font-size: 20px
+}
+
+#list1 {
+    -webkit-padding-start: 20px;
+}
+
+#contentList > ul {
+    -webkit-padding-start: 0;
+}
+
+#contentList > ul > a {
+	text-decoration-line: none;
+}
+
+#contentList > ul > a > li {
+	color: white;
+	font-size: 20px;
+	height: 30px;
+    width: 300px;
+	background-color: grey;
+	border: 1px solid black;
+	margin-bottom: 7px;
+}
+
+#contentList > ul > a > li > span{
+	font-size: 16px
+}
+
+#fixedBtn1 {
+	position: fixed;
+	top: 25px;
+	right: 20px;
+	color: white;
+	font-size: 20px;
+	text-decoration-line: none;
+	text-align: center;
+	height: 30px;
+    width: 60px;
+    background-color: grey;
+	border: 1px solid black;
+}
+
+#fixedBtn2 {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	color: white;
+	font-size: 20px;
+	text-decoration-line: none;
+	text-align: center;
+	height: 30px;
+    width: 80px;
+    background-color: grey;
+	border: 1px solid black;
+}
+
+#fixedBtn3 {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	color: white;
+	font-size: 20px;
+	text-decoration-line: none;
+	text-align: center;
+	height: 30px;
+    width: 80px;
+    background-color: grey;
+	border: 1px solid black;
+}
+
+#bg {
+	background-color: white;
+}

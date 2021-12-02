@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>집합 커버 문제<span>Set Cover</span></h1>
+		<article>
+			<div>
+
+			 n개의 원소를 가진 집합인 <b>U</b>가 있고, U의 부분 집합들을 원소로 하는 집합 <b>F</b>가 주어질 때, F의 원소들인 집합들 중에서 집합들을 선택하여 합집합하면
+			 U와 같게 될 때, 선택하는 집합들의 수를 최소화 하는 문제이다.<br><br>
+			 집합 커버 문제의 최적해는 어떻게 찾아야 할까? F에 n개의 집합이 있다고 가정해볼때 가장 단순한 방법은 F에 있는 집합들의 <b>모든 조합을 하나씩 합집합</b>하여 U가 되는지
+			 확인하고, U가 되는 조합의 집합 수가 최소인 것을 찾는 것이다.<br>
+			 그러나 n개의 원소가 있으면 2의 n거듭제곱 -1개를 다 검사하여야 하고, <b>n이 커지면 최적해를 찾는 것은 실질적으로 불가능</b>하다.<br><br>
+			 이를 극복하기 위해서는 최적해를 찾는 대신에 최적해에 근접한 근사해를 찾아야 한다.	 
+
+
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: U, F= {Si}, i= 1 ~ n<br>
+				출력: 집합 커버 C
+				<ol id="list1" type="1">
+					<li>C는 공집합이다.</li>
+					<li>&nbsp;while ( U 는 공집합이 아니다 ) do {</li>
+					<li>&nbsp;&nbsp;U의 원소들을 가장 많이 포함하고 있는 집합Si를 F에서 선택한다.</li>
+					<li>&nbsp;&nbsp;U = U - Si</li>
+					<li>&nbsp;&nbsp;Si를 F에서 제거하고, Si,를 C에 추가한다.</li>
+					<li>&nbsp;}</li>
+					<li>return C</li>
+
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+
+				SetCover 알고리즘에서 while 루프는 총 n번 수행되며 , 한번 수행될때마다 비교에 O(n<sup>2</sup>) 시간이 걸리므로
+				총 알고리즘의 시간복잡도는 <b>O(n<sup>3</sup>)</b>이다.
+			</div>
+
+			<div>
+				<h3>응용</h3>
+				도시 계획에서 공공 기관 배치하기, 경비 시스템(CCTV) 카메라의 최적 배치, 컴퓨터 바이러스 찾기, 기업의 경력 직원 고용 등 다양하게 쓰일 수 있다.
+			</div>
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p115-121.
+			
+		</footer>
+
+		<a href="greedyIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="taskScheduling.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="javascript:alert('다음 문서가 존재하지 않습니다.')"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>모든 쌍 최단 경로<span>All Pairs Shortest Paths</span></h1>
+		<article>
+			<div>
+			<b>모든 쌍 최단 경로</b>(All Pairs Shortest Paths) 문제는 각 쌍 사이의 최단 경로를 찾는 문제이다.<br><br>
+
+			이는 다익스트라 알고리즘으로 해결할 수 있으나, 플로이드-워셜 알고리즘을 활용하면 더 쉽게 해결할 수 있다.<br><br>
+
+			플로이드-워셜 알고리즘의 아이디어는 점 i에서 점 j로 가는 최단 경로를 구함에 있어서 하나의 점까지 경유할 수 있다면, 최단 거리는 하나의 점을 경유하는 경우와 바로 가는 경우 중에서 최솟값이며 두개의 점까지 경유할 수 있는 경우에는 두개의 점을 경유하는 경우와 아까 구한 경우의 최솟값을 구하면 된다. 이것을 반복하는 것이 플루이드-워셜 알고리즘이다.
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: 2차원 배열 D, 단 D[i,j]=간선  (i, j)의 가중치, 만일 간선 (i, j)가 존재하지 않으면 D[i, j] = ∞, 모든 i에 대하여 D[i, i] = 0이다.<br>
+				출력: 모든 쌍 최단 경로의 거리를 저장한 2차원 배열 D
+				<ol id="list1" type="1">
+					<li>for k = 1 to n</li>
+					<li>&nbsp;for i = 1 to n(단, i != k)</li>
+					<li>&nbsp;&nbsp;for j = 1 to n(단, j != k, j != i )</li>
+					<li>&nbsp;&nbsp;&nbsp;D[i, j] = min{D[i,k]+D[k, j], D[i,j}</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+				너무 간단해서 설명할 필요도 없이 O(n<sup>3</sup>)이다.
+			</div>
+
+			<div>
+				<h3>사용처</h3>
+				<b>맵퀘스트(Mapquest)와 구글(Google)의 웹사이트 지도 및 자동차 내비게이션</b> 사이트에 사용되며, <b>지리 정보 시스템(GLS)에서의 네트워크 분석</b>, <b>통신 네크워크와 모바일 통신 분야</b>, <b>게임, 산업 공학과 경영 공학의 운영 연구</b>(Operation Research), <b>로봇 공학</b>, <b>VLSL 디자인 분야</b> 등에 널리 사용된다.
+			</div>
+
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p163-169.
+			
+		</footer>
+
+		<a href="dpIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="dp.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="matrix.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

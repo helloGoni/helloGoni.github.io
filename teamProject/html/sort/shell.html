@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>쉘 정렬<span>ShellSort</span></h1>
+		<article>
+			<div>
+				<figure>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/CmPA7zE8mx0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+				<figcaption>쉘 정렬 영상</figcaption>
+			</figure><br><br>
+
+			 버블 정렬은 작은 숫자가 느리게 앞으로 가고, 삽입 정렬은 모든 다른 숫자들을 1칸씩 오른쪽으로 이동시켜야한다. <b>쉘 정렬</b>(Shell Sort)은 이러한 단점을 보완하여 삽입 정렬을 이용하여 배열 뒷 부분의 작은 숫자를 앞부분으로 빠르게 이동시키고, 동시에 앞부분의 큰 숫자는 뒷부분으로 이동시키며, 가장 마지막에는 삽입정렬을 수행한다.<br><br>
+
+			 예를 들어서,<br>
+			 30 60 90 10 40 80 40 20 10 60 50 30 40 90 80 라는 배열이 있다고 가정할 때<br><br>
+			 먼저 간격이 5가 되는 숫자끼리 그룹을 만들면, [30 80 50] [60 40 30] [90 20 40] [10 10 90] [40 60 80]이다. 그러고 나서 각 그룹의 첫번째 숫자끼리 삽입 정렬하고 이를 반복하여 마지막번째 숫자끼리까지도 삽입 정렬한다.<br><br>
+
+			 그러면 다음과 같이 정렬된다.<br>
+			 30 30 20 10 40 50 40 40 10 60 80 60 90 90 80<br><br>
+
+			 그 다음에는 간격을 5보다 작게 하여, 예를 들어 3으로 하여 삽입 정렬을 실행한다. 최종적으로는 간격을 1로하여 일반적인 삽입 정렬을 실행한다.
+
+
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				입력: 크기가 n인 배열<br>
+				출력: 정렬된 배열 A
+				<ol id="list1" type="1">
+					<li>for each gap h = [h<sub>0</sub> &gt; h<sub>1</sub> &gt; ... &gt; h<sub>k</sub> = 1 &gt;] {</li>
+					<li>&nbsp;for i = h to n-1 {</li>
+					<li>&nbsp;&nbsp;CurrentElement = A[i];</li>
+					<li>&nbsp;&nbsp;j = i</li>
+					<li>&nbsp;&nbsp;while(j >=h) and (A[j-h] &gt; CurrentElement) {</li>
+					<li>&nbsp;&nbsp;&nbsp;A[j] = A[j - h];</li>
+					<li>&nbsp;&nbsp;&nbsp;j= j - h;</li>
+					<li>&nbsp;&nbsp;&nbsp;}</li>
+					<li>&nbsp;&nbsp;A[j] = CurrentElement; }</li>
+					<li>return 배열A</li>
+
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+
+				쉘 정렬의 수행 속도는 간격 선정에 따라 좌우된다. 지금까지 알려진 가장 좋은 성능을 보이는 간격은 1 4 10 23 57 132 301 701이고, 701이후는 아직 밝혀지지 않았다.<br><br>
+
+				쉘 정렬의 최악의 경우의 시간 복잡도는 하바드의 간격인 2<sup>k</sup>-1을 사용하면 시간 복잡도는 O(n<sup>1.5</sup>)가 된다고 밝혀지고 있다. 또한 다양한 실험을 통해 쉘 정렬의 시간 복잡도는 O(n<sup>1.25</sup>)로 알려지고 있다. 그러나 쉘 정렬의 시간 복잡도는 아직 풀리지 않은 문제로 남아있다. 이는 가장 좋은 간격을 알아내야하는 것이 선행되어야하기 때문이다.<br><br>
+
+				쉘 정렬은 입력 크기가 매우 크지 않은 경우에 매우 좋은 성능을 보인다.
+			</div>
+
+			<div>
+				<h3>사용처</h3>
+				임베디드(Embedded) 시스템에서 주로 사용되는데, 쉘 정렬의 특징인 간격에 따른 그룹별 정렬 방식이 하드웨어로 정렬 알고리즘을 구현하는 데, 매우 적합하기 때문이다.
+			</div>
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			유튜브: <a href="https://youtu.be/CmPA7zE8mx0">https://youtu.be/CmPA7zE8mx0</a><br>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p238-243.
+			
+		</footer>
+
+		<a href="sortIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="insertion.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="heap.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>

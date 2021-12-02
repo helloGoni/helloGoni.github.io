@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/frameStyle.css"> <!-- 모든 알고리즘 문서에 대하여 해당 stylesheet로 통일. -->
+	</head>
+
+	<body id="bg">
+		<h1>퀵 정렬<span>Quick Sort</span></h1>
+		<article>
+			<div>
+				<figure>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/ywWBy6J5gz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+					<figcaption>퀵 정렬 영상</figcaption>
+				</figure><br><br>
+			<b>퀵 정렬</b>(Quick Sort)은 분할 정복 알고리즘으로 분류되나, 사실 알고리즘이 수행되는 과정을 살펴보면 정복 후 분할하는 알고리즘이다.
+			퀵 정렬 알고리즘은 문제를 2개의 부분문제로 분할하는데, 각 부분문제의 크기가 일정하지 않은 형태의 분할 정복 알고리즘이다.<br>
+			퀵 정렬의 아이디어는 피봇이라 일컫는 배열의 원소를 기준으로 피봇보다 작은 숫자들은 왼편으로, 피봇보다 큰 숫자들은 오른편에 위치하도록 분할하고, 피봇을 그 사이에 놓는 것이다.
+			퀵 정렬은 분할된 부분문제들에 대하여서도 위와 동일한 과정을 재귀적으로 수행하여 정렬한다.<br>
+			단, 주의할 점은 <b>피봇은 분할된 왼편/오른편 부분에 포함되지 않는다.</b>
+
+			</div>
+
+			<div>
+				<h3>의사 코드</h3>
+				QuickSort(A,left,right)<br>
+				입력: 배열 A[left]~A[right]<br>
+				출력: 정렬된 배열 A[left]~A[right]
+				<ol id="list1" type="1">
+					<li>if ( left &lt; right ) {</li>
+					<li>&nbsp;피봇을 A[left]~A[right] 중에서 선택하고, 피봇을 A[left]와 자리를 바꾼 후, 피봇과 배열의
+						각 원소를 비교하여 피봇보다 작은 숫자들은 A[left]~A[p-1]로 옮기고, 피봇보다 큰 숫자들은 A[p+1]~A[right]로 옮기며, 피봇은 A[p]에 놓는다.
+					</li>					
+					<li>&nbsp;QuickSort(A,left,p-1) // 피봇보다 작은 그룹</li>
+					<li>&nbsp;QuickSort(A,p+1,right) // 피봇보다 큰 그룹</li>
+					<li>}</li>
+				</ol>
+			</div>
+
+			<div>
+				<h3>시간 복잡도</h3>
+				퀵 정렬의 성능은 <b>피봇 선택</b>이 좌우한다. 피봇으로 가장 작은 숫자 또는 가장 큰 숫자가 선택되면, 한 부분으로 치우치는 분할을 야기한다.
+				만일 입력의 크기가 n이라면, 퀵 정렬의 <b>최악 경우 시간복잡도는 O(n<sup>2</sup>)</b>이다.
+				항상 1/2씩 분할하는 최선의 경우, 비교횟수 O(n) X (층수) = O(n) X (logn) = <b>O(nlogn)</b> 이다.
+				피봇을 항상 랜덤하게 선택하는 경우도 최선과 동일하게 <b>O(nlogn)</b> 이다.
+				<br><br>
+				퀵 정렬의 불균형한 분할을 완화하기 위해 <b>랜덤 피봇 선정</b>, <b>세개의 숫자의 중앙값으로 선정</b> 등의 방법을 사용한다.
+
+			</div>
+			<div>
+				<h3>응용</h3>
+				퀵 정렬은 커다란 크기의 입력에 대해서 가장 좋은 성능을 보이며 생물 정보 공학에서 특정 유전자를 효율적으로 찾는 데 퀵 정렬이 활용된다.
+			</div>
+
+
+		</article>
+
+		<footer>
+
+			<hr>
+			<h3>출처</h3>
+			유튜브: <a href="https://www.youtube.com/embed/ywWBy6J5gz8">https://www.youtube.com/embed/ywWBy6J5gz8</a><br>
+			양성봉, 『알기 쉬운 알고리즘』, 생능출판사, p60-66.
+			
+		</footer>
+
+		<a href="divideIndex.html"><div id="fixedBtn1">Home</div></a>
+		<a href="merge.html"><div id="fixedBtn2">◀ Prev</div></a>
+		<a href="selection.html"><div id="fixedBtn3">Next ▶</div></a>
+	</body>
+
+</html>
