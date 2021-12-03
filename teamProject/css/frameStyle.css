@@ -7,7 +7,7 @@ h1 > span {
 }
 
 article {
-    font-size: 16px
+    font-size: 16px;
     margin-bottom: 40px;
 }
 
@@ -20,7 +20,7 @@ article > div {
 }
 
 footer {
-	font-size: 16px
+	font-size: 16px;
 	margin-bottom: 40px;
 }
 
@@ -98,4 +98,9 @@ footer > h3 {
 
 #bg {
 	background-color: white;
+}
+
+table, th, td {
+	border: 1px solid black;
+	text-align: center;
 }
