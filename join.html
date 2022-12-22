@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <title>회원가입 페이지</title>
+</head>
+<body>
+    <div id="joinForm">
+        <image class="logo" src="image.jpg" style="width: 300px; height: 100px;" onclick="location.href='index.html'"></image>
+        <form action="index.html" >
+            <a class="inputInfo">아이디</a>
+            <span class="tab">&#9;</span>
+            <input type="text" name="id" class="formBox" placeholder="ID"> <br>
+
+            <a class="inputInfo">비밀번호</a>
+            <span class="tab">&#9;</span>       
+            <input type="password" name="password" class="formBox" placeholder="PASSWORD"><br>
+
+            <a class="inputInfo">닉네임</a>
+            <span class="tab">&#9;</span>
+            <input type="text" name="nickname" class="formBox" placeholder="NAME"><br>
+
+            <a class="inputInfo">이메일</a>
+            <span class="tab">&#9;</span>
+            <input type="text" name="text" class="formBox" placeholder="EMAIL"><br>
+
+            
+            <label><input type="checkbox" class="checkBox" value="agree">약관에 동의합니다.</label>
+            <input type="submit" value="회원가입 완료" class="submitButton" onclick="document.location.href='index.html'">
+        </form>
+        <form class="social">
+            <a href="#">깃허브</a>
+            <a href="#">구글</a>
+            <a href="#">페이스북</a>
+            <a href="#"><img class="icons" src="media/kakao.jpg"></a>
+            <a href="#">카카오</a>
+
+            <br>Sign with Social!
+        </form>
+    </div>
+</body>
+</html>
